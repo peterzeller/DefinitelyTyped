@@ -8,9 +8,9 @@
 declare module 'bwip-js' {
     import {IncomingMessage as Request, ServerResponse as Response} from 'http';
 
-    module BwipJs {
-        export function loadFont(fontName:string, sizeMulti: number, fontFile: string): void;
-        export function toBuffer(opts: ToBufferOptions, callback:(err: string|Error, png: Buffer) => void): void;
+    namespace BwipJs {
+        export function loadFont(fontName: string, sizeMulti: number, fontFile: string): void;
+        export function toBuffer(opts: ToBufferOptions, callback: (err: string|Error, png: Buffer) => void): void;
         interface ToBufferOptions {
             bcid: string;
             text: string;
@@ -38,8 +38,8 @@ declare module 'bwip-js' {
             textsize?: number;
             textgaps?: number;
 
-            textxalign?:'offleft'|'left'|'center'|'right'|'offright'|'justify';
-            textyalign?:'below'|'center'|'above';
+            textxalign?: 'offleft'|'left'|'center'|'right'|'offright'|'justify';
+            textyalign?: 'below'|'center'|'above';
             textxoffset?: number;
             textyoffset?: number;
 
@@ -80,7 +80,7 @@ declare module 'bwip-js' {
     }
 
 
-    function BwipJs(req: Request, res: Response, opts?:BwipJs.ToBufferOptions): void;
+    function BwipJs(req: Request, res: Response, opts?: BwipJs.ToBufferOptions): void;
 
     export = BwipJs;
 }

@@ -170,8 +170,8 @@ declare namespace yargs {
         recurse?: boolean;
         extensions?: string[];
         visit?: (commandObject: any, pathToFile?: string, filename?: string) => any;
-        include?: RegExp | ((pathToFile: string)=>boolean);
-        exclude?: RegExp | ((pathToFile: string)=>boolean);
+        include?: RegExp | ((pathToFile: string) => boolean);
+        exclude?: RegExp | ((pathToFile: string) => boolean);
     }
 
     interface Options {

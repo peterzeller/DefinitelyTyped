@@ -6,9 +6,9 @@
 declare namespace Chance {
 
     interface ChanceStatic {
-        (): Chance
-        (seed: number): Chance
-        (generator: () => any): Chance
+        (): Chance;
+        (seed: number): Chance;
+        (generator: () => any): Chance;
 
         new(): Chance;
         new(seed: number): Chance;
@@ -120,7 +120,7 @@ declare namespace Chance {
         pick<T>(arr: T[]): T;
         pickone<T>(arr: T[]): T;
         /**
-         * @deprecated Use pickset 
+         * @deprecated Use pickset
          */
         pick<T>(arr: T[], count: number): T[];
         pickset<T>(arr: T[], count: number): T[];

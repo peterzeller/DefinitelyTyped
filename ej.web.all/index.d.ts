@@ -3,6 +3,8 @@
 // Definitions by: Syncfusion <https://github.com/syncfusion/>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
+// tslint:disable
+
 /// <reference types="jquery"/>
 
 /*!
@@ -12,10 +14,10 @@
 *  Use of this code is subject to the terms of our license.
 *  A copy of the current license can be obtained at any time by e-mailing
 *  licensing@syncfusion.com. Any infringement will be prosecuted under
-*  applicable laws. 
+*  applicable laws.
 */
-declare module ej {
-	
+declare namespace ej {
+
 	var dataUtil: dataUtil;
     function isMobile(): boolean;
     function isIOS(): boolean;
@@ -34,9 +36,9 @@ declare module ej {
     function cancelEvent(): string;
     function copyObject(): string;
     function createObject(nameSpace: string, value: Object, initIn: any): JQuery;
-    function createObject(element : any , eventEmitter :any, model : any): any;
-	function getObject<T>(element :string, model :any ): T;
-    function defineClass(className: string, constructor:any, proto: Object, replace: boolean): Object;
+    function createObject(element: any , eventEmitter: any, model: any): any;
+	function getObject<T>(element: string, model: any ): T;
+    function defineClass(className: string, constructor: any, proto: Object, replace: boolean): Object;
     function destroyWidgets(element: Object): void;
     function endEvent(): string;
     function event(type: string, data: any, eventProp: Object): Object;
@@ -70,8 +72,8 @@ declare module ej {
     function isPortrait(): any;
     function isTablet(): boolean;
     function isWindowsWebView(): string;
-    function listenEvents(selectors:any, eventTypes: any, handlers: any, remove?: any, pluginObj?: any, disableMouse?: boolean): void;
-    function listenTouchEvent(selectors:any, eventTypes: any, handlers: any, remove?: any, pluginObj?: any, disableMouse?: boolean): void;
+    function listenEvents(selectors: any, eventTypes: any, handlers: any, remove?: any, pluginObj?: any, disableMouse?: boolean): void;
+    function listenTouchEvent(selectors: any, eventTypes: any, handlers: any, remove?: any, pluginObj?: any, disableMouse?: boolean): void;
     function logBase(val: string, base: string): number;
     function measureText(text: string, maxwidth: number, font: string): string;
     function moveEvent(): string;
@@ -102,7 +104,7 @@ declare module ej {
     function select(jsonArray: any, fields: string): any;
     function setTransition(): boolean;
     function sum(json: string, fieldName: string): string;
-    function swap(array: any, x: string, y: string): any; 
+    function swap(array: any, x: string, y: string): any;
     var cssUA: string;
     var serverTimezoneOffset: number;
     var transform: string;
@@ -115,24 +117,24 @@ declare module ej {
     var transitionTimingFunction: string;
 	var util: {
         valueFunction(val: string): any;
-    }        
-    export module device {
+    }
+    export namespace device {
         function isAndroid(): boolean;
         function isIOS(): boolean;
         function isFlat(): boolean;
         function isIOS7(): boolean;
         function isWindows(): boolean;
     }
-    export module widget {
+    export namespace widget {
         var autoInit: boolean;
         var registeredInstances: Array<any>;
         var registeredWidgets: Array<any>;
         function register(pluginName: string, className: string, prototype: any): void;
         function destroyAll(elements: Element): void;
         function init(element: Element): void;
-        function registerInstance(element: Element, pluginName: string, className: string, prototype: any):void;
-    } 
-	
+        function registerInstance(element: Element, pluginName: string, className: string, prototype: any): void;
+    }
+
 	interface browserInfoOptions {
 		name: string;
 		version: string;
@@ -142,13 +144,13 @@ declare module ej {
 	class WidgetBase {
         destroy(): void;
         element: JQuery;
-        setModel(options: Object, forceSet?: boolean):any;
+        setModel(options: Object, forceSet?: boolean): any;
         option(prop?: Object, value?: Object, forceSet?: boolean): any;
 		_trigger(eventName?: string, eventProp?: Object): any;
         _on(element: JQuery, eventType?: string, handler?: (eventObject: JQueryEventObject) => any): any;
          _on(element: JQuery, eventType ?: string, selector ?: string, handler ?: (eventObject: JQueryEventObject) => any): any;
        _off(element: JQuery, eventName: string, handler ?: (eventObject: JQueryEventObject) => any): any;
-       _off(element: JQuery, eventType ?: string, selector ?: string, handler ?: (eventObject: JQueryEventObject) => any): any;     
+       _off(element: JQuery, eventType ?: string, selector ?: string, handler ?: (eventObject: JQueryEventObject) => any): any;
         persistState(): void;
         restoreState(silent: boolean): void;
     }
@@ -158,17 +160,17 @@ declare module ej {
         static fn: Widget;
         static extend(widget: Widget): any;
         register(pluginName: string, className: string, prototype: any): void;
-        destroyAll(elements: Element): void;      
-        model: any;     
+        destroyAll(elements: Element): void;
+        model: any;
     }
 
 
     interface BaseEvent {
         cancel: boolean;
-        type: string;       
+        type: string;
     }
     class DataManager {
-        constructor(dataSource?: any, query?: ej.Query, adaptor?: any); 
+        constructor(dataSource?: any, query?: ej.Query, adaptor?: any);
         setDefaultQuery(query: ej.Query): void;
         executeQuery(query?: ej.Query, done?: any, fail?: any, always?: any): JQueryPromise<any>;
         executeLocal(query?: ej.Query): ej.DataManager;
@@ -176,7 +178,7 @@ declare module ej {
         insert(data: Object, tableName?: string): JQueryPromise<any>;
         remove(keyField: string, value: any, tableName?: string): Object;
         update(keyField: string, value: any, tableName?: string): Object;
-    }    
+    }
 
     class Query {
         constructor();
@@ -191,7 +193,7 @@ declare module ej {
         addParams(key: string, value: string): ej.Query;
         expand(tables: any): ej.Query;
         where(fieldName: string, operator: ej.FilterOperators, value: any, ignoreCase?: boolean): ej.Query;
-		where(predicate:ej.Predicate):ej.Query;
+		where(predicate: ej.Predicate): ej.Query;
         search(searchKey: any, fieldNames?:  any, operator?: string, ignoreCase?: boolean): ej.Query;
         sortBy(fieldName: string, comparer?: ej.SortOrder, isFromGroup?: boolean): ej.Query;
         sortByDesc(fieldName: string): ej.Query;
@@ -203,7 +205,7 @@ declare module ej {
         hierarchy(query: ej.Query, selectorFn: any): ej.Query;
         foreignKey(key: string): ej.Query;
         requiresCount(): ej.Query;
-        range(start:number, end:number): ej.Query;
+        range(start: number, end: number): ej.Query;
     }
 
     class Adaptor {
@@ -212,7 +214,7 @@ declare module ej {
         type: ej.Adaptor;
         options: AdaptorOptions;
         extend(overrides: any): ej.Adaptor;
-        processQuery(dm: ej.DataManager, query: ej.Query):any;
+        processQuery(dm: ej.DataManager, query: ej.Query): any;
         processResponse(data: Object, ds: any, query: ej.Query, xhr: JQueryXHR, request?: Object, changes?: Changes): Object;
         convertToQueryString(req: any, query: ej.Query, dm: ej.DataManager): JQueryParam;
     }
@@ -240,7 +242,7 @@ declare module ej {
         processResponse(data: Object, ds: any, query: ej.Query, xhr: JQueryXHR, request?: Object, changes?: Changes): Object;
         onGroup(e: any): void;
         batchRequest(dm: ej.DataManager, changes: Changes, e: any): void;
-        beforeSend(dm: ej.DataManager, request: any, settings?:any): void;
+        beforeSend(dm: ej.DataManager, request: any, settings?: any): void;
         insert(dm: ej.DataManager, data: Object, tableName: string): { url: string; data: any };
         remove(dm: ej.DataManager, keyField: string, value: any, tableName: string): { type: string; url: string; data?: any };
         update(dm: ej.DataManager, keyField: string, value: any, tableName: string): { type: string; url: string; data: any };
@@ -262,7 +264,7 @@ declare module ej {
         onSelect(e: Object): string;
         onCount(e: Object): string;
         beforeSend(dm: ej.DataManager, request: any, settings?: any): void;
-        processResponse(data: Object, ds: Object, query: ej.Query, xhr:any, request: any, changes: Changes): {
+        processResponse(data: Object, ds: Object, query: ej.Query, xhr: any, request: any, changes: Changes): {
             result: Object; count: number
         };
         convertToQueryString(req: Object, query: ej.Query, dm: ej.DataManager): JQueryParam;
@@ -299,12 +301,12 @@ declare module ej {
         options: ODataAdaptorOptions;
         onCount(e: Object): string;
         onEachSearch(e: Object): void;
-        onSearch(e: Object): string; 
+        onSearch(e: Object): string;
         beforeSend(dm: ej.DataManager, request: any, settings?: any): void;
-        processResponse(data: Object, ds: Object, query: ej.Query, xhr:any, request: any, changes: Changes): {
+        processResponse(data: Object, ds: Object, query: ej.Query, xhr: any, request: any, changes: Changes): {
             result: Object; count: number
         };
-        
+
     }
     interface ODataAdaptorOptions {
         requestType?: string;
@@ -330,7 +332,7 @@ declare module ej {
     class JsonAdaptor extends ej.Adaptor {
         constructor();
         processQuery(ds: Object, query: ej.Query): string;
-        batchRequest(dm: ej.DataManager, changes: Changes, e:any): Changes;
+        batchRequest(dm: ej.DataManager, changes: Changes, e: any): Changes;
         onWhere(ds: Object, e: any): any;
         onSearch(ds: Object, e: any): any
         onSortBy(ds: Object, e: any, query: ej.Query): Object;
@@ -341,8 +343,8 @@ declare module ej {
         onSkip(ds: Object, e: any): Object;
         onSelect(ds: Object, e: any): Object;
         insert(dm: ej.DataManager, data: any): Object;
-        remove(dm: ej.DataManager, keyField: string, value:any, tableName: string): Object;
-        update(dm: ej.DataManager, keyField: string, value:any, tableName: string): Object;
+        remove(dm: ej.DataManager, keyField: string, value: any, tableName: string): Object;
+        update(dm: ej.DataManager, keyField: string, value: any, tableName: string): Object;
     }
 	class remoteSaveAdaptor extends ej.UrlAdaptor {
         constructor();
@@ -365,7 +367,7 @@ declare module ej {
         isDirty(): boolean;
         getChanges(): Changes;
         toArray(): Array<any>;
-        setDirty(dirty:any, model:any): void;
+        setDirty(dirty: any, model: any): void;
         get(index: number): void;
         length(): number;
         bindTo(element: any): void;
@@ -395,7 +397,7 @@ declare module ej {
     class Predicate {
 	    constructor();
         constructor(field: string, operator: ej.FilterOperators, value: any, ignoreCase: boolean);
-        and(field: string, operator: any, value:any, ignoreCase:boolean): void;
+        and(field: string, operator: any, value: any, ignoreCase: boolean): void;
         or(field: string, operator: any, value: any, ignoreCase: boolean): void;
 		or(predicate: Array<Object>): any;
         validate(record: Object): boolean;
@@ -409,15 +411,15 @@ declare module ej {
             predicates: any;
         };
     }
-    interface dataUtil { 
+    interface dataUtil {
         swap(array: Array<any>, x: number, y: number): void;
-        mergeSort(jsonArray: Array<any>, fieldName?: string, comparer?:any): Array<any>;
+        mergeSort(jsonArray: Array<any>, fieldName?: string, comparer?: any): Array<any>;
         max(jsonArray: Array<any>, fieldName?: string, comparer?: string): Array<any>;
         min(jsonArray: Array<any>, fieldName: string, comparer: string): Array<any>;
-        distinct(jsonArray: Array<any>, fieldName?: string, requiresCompleteRecord?:any): Array<any>;
-        sum(json:any, fieldName: string): number;
-        avg(json:any, fieldName: string): number;
-        select(jsonArray: Array<any>, fieldName: string, fields:string): Array<any>;
+        distinct(jsonArray: Array<any>, fieldName?: string, requiresCompleteRecord?: any): Array<any>;
+        sum(json: any, fieldName: string): number;
+        avg(json: any, fieldName: string): number;
+        select(jsonArray: Array<any>, fieldName: string, fields: string): Array<any>;
         group(jsonArray: Array<any>, field: string, /* internal */ level: number): Array<any>;
         parseTable(table: string, headerOption: ej.headerOption, headerRowIndex: number): Object;
     }
@@ -479,7 +481,7 @@ declare module ej {
 		row,
 		tHead
 	}
-		
+
 	enum filterType{
 		StartsWith,
 		Contains,
@@ -495,7 +497,7 @@ declare module ej {
 		Fade,
 		None,
 		Slide
-	} 
+	}
 	enum Type{
 		Overlay,
 		Slide
@@ -504,15 +506,15 @@ class Draggable extends ej.Widget {
 	static fn: Draggable;
 	constructor(element: JQuery, options?: Draggable.Model);
 	constructor(element: Element, options?: Draggable.Model);
-	model:Draggable.Model;
-	defaults:Draggable.Model;
+	model: Draggable.Model;
+	defaults: Draggable.Model;
 
 	/** destroy in the draggable.
 	*   @returns {void}
 	*/
 	_destroy(): void;
 }
-export module Draggable{
+export namespace Draggable{
 
 export interface Model {
 
@@ -662,15 +664,15 @@ class Droppable extends ej.Widget {
 	static fn: Droppable;
 	constructor(element: JQuery, options?: Droppable.Model);
 	constructor(element: Element, options?: Droppable.Model);
-	model:Droppable.Model;
-	defaults:Droppable.Model;
+	model: Droppable.Model;
+	defaults: Droppable.Model;
 
 	/** destroy in the Droppable.
 	*   @returns {void}
 	*/
 	_destroy(): void;
 }
-export module Droppable{
+export namespace Droppable{
 
 export interface Model {
 
@@ -756,15 +758,15 @@ class Resizable extends ej.Widget {
 	static fn: Resizable;
 	constructor(element: JQuery, options?: Resizable.Model);
 	constructor(element: Element, options?: Resizable.Model);
-	model:Resizable.Model;
-	defaults:Resizable.Model;
+	model: Resizable.Model;
+	defaults: Resizable.Model;
 
 	/** destroy in the Resizable.
 	*   @returns {void}
 	*/
 	_destroy(): void;
 }
-export module Resizable{
+export namespace Resizable{
 
 export interface Model {
 
@@ -847,8 +849,8 @@ export interface HelperEventArgs {
 }
 
 
-		var globalize:globalize;
-		var cultures:culture;
+		var globalize: globalize;
+		var cultures: culture;
 		function addCulture(name: string, culture ?: any): void;
     	function preferredCulture(culture ?: string): culture;
     	function format(value: any, format: string, culture ?: string): string;
@@ -857,10 +859,10 @@ export interface HelperEventArgs {
     	function parseDate(value: string, format: string, culture ?: string): Date;
     	function getLocalizedConstants(controlName: string, culture ?: string): any;
 
-interface globalize {  
+interface globalize {
         addCulture(name: string, culture?: any): void;
         preferredCulture(culture?: string): culture;
-        format(value: any, format: string, culture?: string): string; 
+        format(value: any, format: string, culture?: string): string;
         parseInt(value: string, radix?: any, culture?: string): number;
         parseFloat(value: string, radix?: any, culture?: string): number;
         parseDate(value: string, format: string, culture?: string): Date;
@@ -925,13 +927,13 @@ interface globalize {
         M: string;
         Y: string;
         S: string;
-    } 
+    }
 class Scroller extends ej.Widget {
 	static fn: Scroller;
 	constructor(element: JQuery, options?: Scroller.Model);
 	constructor(element: Element, options?: Scroller.Model);
-	model:Scroller.Model;
-	defaults:Scroller.Model;
+	model: Scroller.Model;
+	defaults: Scroller.Model;
 
 	/** destroy the Scroller control, unbind the all ej control related events automatically and bring the control to pre-init state.
 	*   @returns {void}
@@ -973,7 +975,7 @@ class Scroller extends ej.Widget {
 	*/
 	scrollY(): void;
 }
-export module Scroller{
+export namespace Scroller{
 
 export interface Model {
 
@@ -1151,8 +1153,8 @@ class Accordion extends ej.Widget {
 	static fn: Accordion;
 	constructor(element: JQuery, options?: Accordion.Model);
 	constructor(element: Element, options?: Accordion.Model);
-	model:Accordion.Model;
-	defaults:Accordion.Model;
+	model: Accordion.Model;
+	defaults: Accordion.Model;
 
 	/** AddItem method is used to add the panel in dynamically. It receives the following parameters
 	*   @param {string} specify the name of the header
@@ -1236,7 +1238,7 @@ class Accordion extends ej.Widget {
 	*/
 	show(): void;
 }
-export module Accordion{
+export namespace Accordion{
 
 export interface Model {
 
@@ -1663,8 +1665,8 @@ class Autocomplete extends ej.Widget {
 	static fn: Autocomplete;
 	constructor(element: JQuery, options?: Autocomplete.Model);
 	constructor(element: Element, options?: Autocomplete.Model);
-	model:Autocomplete.Model;
-	defaults:Autocomplete.Model;
+	model: Autocomplete.Model;
+	defaults: Autocomplete.Model;
 
 	/** Clears the text in the Autocomplete textbox.
 	*   @returns {void}
@@ -1723,7 +1725,7 @@ class Autocomplete extends ej.Widget {
 	*/
 	selectValueByText(Text: string): void;
 }
-export module Autocomplete{
+export namespace Autocomplete{
 
 export interface Model {
 
@@ -2245,8 +2247,8 @@ class Button extends ej.Widget {
 	static fn: Button;
 	constructor(element: JQuery, options?: Button.Model);
 	constructor(element: Element, options?: Button.Model);
-	model:Button.Model;
-	defaults:Button.Model;
+	model: Button.Model;
+	defaults: Button.Model;
 
 	/** destroy the button widget all events bound using this._on will be unbind automatically and bring the control to pre-init state.
 	*   @returns {void}
@@ -2263,7 +2265,7 @@ class Button extends ej.Widget {
 	*/
 	enable(): void;
 }
-export module Button{
+export namespace Button{
 
 export interface Model {
 
@@ -2374,7 +2376,7 @@ export interface ClickEventArgs {
 	*/
 	status?: boolean;
 
-	/** return the event model for sever side processing. 
+	/** return the event model for sever side processing.
 	*/
 	e?: any;
 }
@@ -2441,16 +2443,16 @@ Normal,
 Mini,
 //Creates button with Built-in small size height, width specified
 Small,
-//Creates button with Built-in medium size height, width specified 
+//Creates button with Built-in medium size height, width specified
 Medium,
-//Creates button with Built-in large size height, width specified 
+//Creates button with Built-in large size height, width specified
 Large,
 }
 enum ButtonType
 {
 //Creates button with Built-in button type specified
 Button,
-//Creates button with Built-in reset type specified 
+//Creates button with Built-in reset type specified
 Reset,
 //Creates button with Built-in submit type specified
 Submit,
@@ -2460,10 +2462,10 @@ class Captcha extends ej.Widget {
 	static fn: Captcha;
 	constructor(element: JQuery, options?: Captcha.Model);
 	constructor(element: Element, options?: Captcha.Model);
-	model:Captcha.Model;
-	defaults:Captcha.Model;
+	model: Captcha.Model;
+	defaults: Captcha.Model;
 }
-export module Captcha{
+export namespace Captcha{
 
 export interface Model {
 
@@ -2690,8 +2692,8 @@ class ListBox extends ej.Widget {
 	static fn: ListBox;
 	constructor(element: JQuery, options?: ListBox.Model);
 	constructor(element: Element, options?: ListBox.Model);
-	model:ListBox.Model;
-	defaults:ListBox.Model;
+	model: ListBox.Model;
+	defaults: ListBox.Model;
 
 	/** Adds a given list items in the ListBox widget at a specified index. It accepts two parameters.
 	*   @param {any|string} This can be a list item object (for JSON binding) or a string (for UL and LI rendering). Also we can the specify this as an array of list item object or an array of strings to add multiple items.
@@ -2834,7 +2836,7 @@ class ListBox extends ej.Widget {
 	removeSelectedItems(): void;
 
 	/** Removes a list item by using its text.
-	*   @param {string} Text of the listbox item to be removed. 
+	*   @param {string} Text of the listbox item to be removed.
 	*   @returns {void}
 	*/
 	removeItemByText(text: string): void;
@@ -2845,7 +2847,7 @@ class ListBox extends ej.Widget {
 	*/
 	removeItemByIndex(index: number): void;
 
-	/** 
+	/**
 	*   @returns {void}
 	*/
 	selectAll(): void;
@@ -2891,7 +2893,7 @@ class ListBox extends ej.Widget {
 	*/
 	uncheckItemsByIndices(indices: number[]|string): void;
 
-	/** 
+	/**
 	*   @returns {void}
 	*/
 	unselectAll(): void;
@@ -2973,7 +2975,7 @@ class ListBox extends ej.Widget {
 	*/
 	hideItemByIndex(index: number): void;
 
-	/** 
+	/**
 	*   @returns {void}
 	*/
 	show(): void;
@@ -2993,7 +2995,7 @@ class ListBox extends ej.Widget {
 	*/
 	showAllItems(): void;
 }
-export module ListBox{
+export namespace ListBox{
 
 export interface Model {
 
@@ -3711,8 +3713,8 @@ class Calculate {
 	static fn: Calculate;
 	constructor(element: JQuery, options?: Calculate.Model);
 	constructor(element: Element, options?: Calculate.Model);
-	model:Calculate.Model;
-	defaults:Calculate.Model;
+	model: Calculate.Model;
+	defaults: Calculate.Model;
 
 	/** Add the custom formulas with function in CalcEngine library
 	*   @param {string} pass the formula name
@@ -3763,7 +3765,7 @@ class Calculate {
 	*/
 	computeFormula(Formula: string): string;
 }
-export module Calculate{
+export namespace Calculate{
 
 export interface Model {
 }
@@ -3773,8 +3775,8 @@ class CheckBox extends ej.Widget {
 	static fn: CheckBox;
 	constructor(element: JQuery, options?: CheckBox.Model);
 	constructor(element: Element, options?: CheckBox.Model);
-	model:CheckBox.Model;
-	defaults:CheckBox.Model;
+	model: CheckBox.Model;
+	defaults: CheckBox.Model;
 
 	/** Destroy the CheckBox widget all events bound using this._on will be unbind automatically and bring the control to pre-init state.
 	*   @returns {void}
@@ -3796,7 +3798,7 @@ class CheckBox extends ej.Widget {
 	*/
 	isChecked(): boolean;
 }
-export module CheckBox{
+export namespace CheckBox{
 
 export interface Model {
 
@@ -3997,8 +3999,8 @@ class ColorPicker extends ej.Widget {
 	static fn: ColorPicker;
 	constructor(element: JQuery, options?: ColorPicker.Model);
 	constructor(element: Element, options?: ColorPicker.Model);
-	model:ColorPicker.Model;
-	defaults:ColorPicker.Model;
+	model: ColorPicker.Model;
+	defaults: ColorPicker.Model;
 
 	/** Disables the color picker control
 	*   @returns {void}
@@ -4050,7 +4052,7 @@ class ColorPicker extends ej.Widget {
 	*/
 	show(): void;
 }
-export module ColorPicker{
+export namespace ColorPicker{
 
 export interface Model {
 
@@ -4421,7 +4423,7 @@ enum Presets{
 }
 enum ButtonMode
 {
-//Displays the button in split mode 
+//Displays the button in split mode
 Split,
 //Displays the button in Dropdown mode
 Dropdown,
@@ -4431,8 +4433,8 @@ class FileExplorer extends ej.Widget {
 	static fn: FileExplorer;
 	constructor(element: JQuery, options?: FileExplorer.Model);
 	constructor(element: Element, options?: FileExplorer.Model);
-	model:FileExplorer.Model;
-	defaults:FileExplorer.Model;
+	model: FileExplorer.Model;
+	defaults: FileExplorer.Model;
 
 	/** Refresh the size of FileExplorer control.
 	*   @returns {void}
@@ -4440,25 +4442,25 @@ class FileExplorer extends ej.Widget {
 	adjustSize(): void;
 
 	/** Disable the particular context menu item.
-	*   @param {string|HTMLElement} Id of the menu item/ Menu element to be disabled 
+	*   @param {string|HTMLElement} Id of the menu item/ Menu element to be disabled
 	*   @returns {void}
 	*/
 	disableMenuItem(item: string|HTMLElement): void;
 
 	/** Disable the particular toolbar item.
-	*   @param {string|HTMLElement} Id of the toolbar item/ Tool item element to be disabled 
+	*   @param {string|HTMLElement} Id of the toolbar item/ Tool item element to be disabled
 	*   @returns {void}
 	*/
 	disableToolbarItem(item: string|HTMLElement): void;
 
 	/** Enable the particular context menu item.
-	*   @param {string|HTMLElement} Id of the menu item/ Menu element to be Enabled 
+	*   @param {string|HTMLElement} Id of the menu item/ Menu element to be Enabled
 	*   @returns {void}
 	*/
 	enableMenuItem(item: string|HTMLElement): void;
 
 	/** Enable the particular toolbar item
-	*   @param {string|HTMLElement} Id of the tool item/ Tool item element to be Enabled 
+	*   @param {string|HTMLElement} Id of the tool item/ Tool item element to be Enabled
 	*   @returns {void}
 	*/
 	enableToolbarItem(item: string|HTMLElement): void;
@@ -4469,12 +4471,12 @@ class FileExplorer extends ej.Widget {
 	refresh(): void;
 
 	/** Remove the particular toolbar item.
-	*   @param {string|HTMLElement} Id of the tool item/ tool item element to be removed 
+	*   @param {string|HTMLElement} Id of the tool item/ tool item element to be removed
 	*   @returns {void}
 	*/
 	removeToolbarItem(item: string|HTMLElement): void;
 }
-export module FileExplorer{
+export namespace FileExplorer{
 
 export interface Model {
 
@@ -5169,7 +5171,7 @@ enum layoutType{
 	///Supports to display files in tile view
 	Tile,
 
-	///Supports to display files in grid view 
+	///Supports to display files in grid view
 	Grid,
 
 	///Supports to display files as large icons
@@ -5182,8 +5184,8 @@ class DatePicker extends ej.Widget {
 	static fn: DatePicker;
 	constructor(element: JQuery, options?: DatePicker.Model);
 	constructor(element: Element, options?: DatePicker.Model);
-	model:DatePicker.Model;
-	defaults:DatePicker.Model;
+	model: DatePicker.Model;
+	defaults: DatePicker.Model;
 
 	/** Disables the DatePicker control.
 	*   @returns {void}
@@ -5210,7 +5212,7 @@ class DatePicker extends ej.Widget {
 	*/
 	show(): void;
 }
-export module DatePicker{
+export namespace DatePicker{
 
 export interface Model {
 
@@ -5780,10 +5782,10 @@ enum Level{
 
 enum HighlightSection{
 
-	///Highlight the week of the currently  selected date in DatePicker popup calendar  
+	///Highlight the week of the currently  selected date in DatePicker popup calendar
 	Week,
 
-	///Highlight the workdays in a currently  selected date's week in DatePicker popup calendar 
+	///Highlight the workdays in a currently  selected date's week in DatePicker popup calendar
 	WorkDays,
 
 	///Nothing will be highlighted, remove highlights from DatePicker popup calendar if already exists
@@ -5796,8 +5798,8 @@ class DateTimePicker extends ej.Widget {
 	static fn: DateTimePicker;
 	constructor(element: JQuery, options?: DateTimePicker.Model);
 	constructor(element: Element, options?: DateTimePicker.Model);
-	model:DateTimePicker.Model;
-	defaults:DateTimePicker.Model;
+	model: DateTimePicker.Model;
+	defaults: DateTimePicker.Model;
 
 	/** Disables the DateTimePicker control.
 	*   @returns {void}
@@ -5829,7 +5831,7 @@ class DateTimePicker extends ej.Widget {
 	*/
 	show(): void;
 }
-export module DateTimePicker{
+export namespace DateTimePicker{
 
 export interface Model {
 
@@ -5843,7 +5845,7 @@ export interface Model {
 	cssClass?: string;
 
 	/** Defines the datetime format displayed in the DateTimePicker. The value should be a combination of date format and time format.
-	*   @Default {M/d/yyyy h:mm tt}
+	*   @Default {M/d/yyyy h: mm tt}
 	*/
 	dateTimeFormat?: string;
 
@@ -5907,12 +5909,12 @@ export interface Model {
 	locale?: string;
 
 	/** Sets the maximum value to the DateTimePicker. Beyond the maximum value an error class is added to the wrapper element when we set true to enableStrictMode.
-	*   @Default {new Date(12/31/2099 11:59:59 PM)}
+	*   @Default {new Date(12/31/2099 11: 59: 59 PM)}
 	*/
 	maxDateTime?: string|Date;
 
 	/** Sets the minimum value to the DateTimePicker. Behind the minimum value an error class is added to the wrapper element.
-	*   @Default {new Date(1/1/1900 12:00:00 AM)}
+	*   @Default {new Date(1/1/1900 12: 00: 00 AM)}
 	*/
 	minDateTime?: string|Date;
 
@@ -5957,7 +5959,7 @@ export interface Model {
 	stepMonths?: number;
 
 	/** Defines the time format displayed in the time dropdown inside the DateTimePicker popup.
-	*   @Default {h:mm tt}
+	*   @Default {h: mm tt}
 	*/
 	timeDisplayFormat?: string;
 
@@ -6256,7 +6258,7 @@ enum popupPosition
 {
 //Opens the DateTimePicker popup below to the DateTimePicker input box
 Bottom,
-//Opens the DateTimePicker popup above to the DateTimePicker input box 
+//Opens the DateTimePicker popup above to the DateTimePicker input box
 Top,
 }
 
@@ -6264,8 +6266,8 @@ class Dialog extends ej.Widget {
 	static fn: Dialog;
 	constructor(element: JQuery, options?: Dialog.Model);
 	constructor(element: Element, options?: Dialog.Model);
-	model:Dialog.Model;
-	defaults:Dialog.Model;
+	model: Dialog.Model;
+	defaults: Dialog.Model;
 
 	/** Closes the dialog widget dynamically.
 	*   @returns {void}
@@ -6339,7 +6341,7 @@ class Dialog extends ej.Widget {
 	*/
 	focus(): void;
 }
-export module Dialog{
+export namespace Dialog{
 
 export interface Model {
 
@@ -6881,8 +6883,8 @@ class DropDownList extends ej.Widget {
 	static fn: DropDownList;
 	constructor(element: JQuery, options?: DropDownList.Model);
 	constructor(element: Element, options?: DropDownList.Model);
-	model:DropDownList.Model;
-	defaults:DropDownList.Model;
+	model: DropDownList.Model;
+	defaults: DropDownList.Model;
 
 	/** Adding a single item or an array of items into the DropDownList allows you to specify all the field attributes such as value, template, image URL, and HTML attributes for those items.
 	*   @param {any|Array<any>}  this parameter should have field attributes with respect to mapped field attributes and it's corresponding values to fields
@@ -6999,7 +7001,7 @@ class DropDownList extends ej.Widget {
 	*/
 	unselectItemByValue(index: string|number|Array<any>): void;
 }
-export module DropDownList{
+export namespace DropDownList{
 
 export interface Model {
 
@@ -7320,11 +7322,11 @@ export interface ActionCompleteEventArgs {
 	*/
 	model?: any;
 
-	/** Returns the query for data retrieval 
+	/** Returns the query for data retrieval
 	*/
 	query?: any;
 
-	/** Returns the query for data retrieval from the Database 
+	/** Returns the query for data retrieval from the Database
 	*/
 	request?: any;
 
@@ -7355,7 +7357,7 @@ export interface ActionFailureEventArgs {
 	*/
 	model?: any;
 
-	/** Returns the query for data retrieval 
+	/** Returns the query for data retrieval
 	*/
 	query?: any;
 
@@ -7378,11 +7380,11 @@ export interface ActionSuccessEventArgs {
 	*/
 	model?: any;
 
-	/** Returns the query for data retrieval 
+	/** Returns the query for data retrieval
 	*/
 	query?: any;
 
-	/** Returns the query for data retrieval from the Database 
+	/** Returns the query for data retrieval from the Database
 	*/
 	request?: any;
 
@@ -7831,14 +7833,14 @@ export interface Fields {
 }
 enum FilterType
 {
-//filter the data wherever contains search key 
+//filter the data wherever contains search key
 Contains,
 //filter the data based on search key present at start position
 StartsWith,
 }
 enum MultiSelectMode
 {
-// can select only single item in DropDownList 
+// can select only single item in DropDownList
 None,
 //can select multiple items and it's separated by delimiterChar
 Delimiter,
@@ -7864,8 +7866,8 @@ class Tooltip extends ej.Widget {
 	static fn: Tooltip;
 	constructor(element: JQuery, options?: Tooltip.Model);
 	constructor(element: Element, options?: Tooltip.Model);
-	model:Tooltip.Model;
-	defaults:Tooltip.Model;
+	model: Tooltip.Model;
+	defaults: Tooltip.Model;
 
 	/** Destroys the Tooltip control.
 	*   @returns {void}
@@ -7897,7 +7899,7 @@ class Tooltip extends ej.Widget {
 	*/
 	show(effect?: string, func?: Function, target?: JQuery): void;
 }
-export module Tooltip{
+export namespace Tooltip{
 
 export interface Model {
 
@@ -8319,8 +8321,8 @@ class Editor extends ej.Widget {
 	static fn: Editor;
 	constructor(element: JQuery, options?: Editor.Model);
 	constructor(element: Element, options?: Editor.Model);
-	model:Editor.Model;
-	defaults:Editor.Model;
+	model: Editor.Model;
+	defaults: Editor.Model;
 
 	/** destroy the editor widgets all events are unbind automatically and bring the control to pre-init state.
 	*   @returns {void}
@@ -8351,7 +8353,7 @@ class Editor extends ej.Widget {
 
  class PercentageTextbox extends Editor{
 }
-export module Editor{
+export namespace Editor{
 
 export interface Model {
 
@@ -8595,8 +8597,8 @@ class ListView extends ej.Widget {
 	static fn: ListView;
 	constructor(element: JQuery, options?: ListView.Model);
 	constructor(element: Element, options?: ListView.Model);
-	model:ListView.Model;
-	defaults:ListView.Model;
+	model: ListView.Model;
+	defaults: ListView.Model;
 
 	/** To add item in the given index. If you have enabled grouping in ListView then you need to pass the corresponding group list title to add item in it.
 	*   @param {any} Specifies the item to be added in ListView
@@ -8745,7 +8747,7 @@ class ListView extends ej.Widget {
 	*/
 	unCheckItem(index: number): void;
 }
-export module ListView{
+export namespace ListView{
 
 export interface Model {
 
@@ -9097,8 +9099,8 @@ class MaskEdit extends ej.Widget {
 	static fn: MaskEdit;
 	constructor(element: JQuery, options?: MaskEdit.Model);
 	constructor(element: Element, options?: MaskEdit.Model);
-	model:MaskEdit.Model;
-	defaults:MaskEdit.Model;
+	model: MaskEdit.Model;
+	defaults: MaskEdit.Model;
 
 	/** To clear the text in mask edit textbox control.
 	*   @returns {void}
@@ -9125,7 +9127,7 @@ class MaskEdit extends ej.Widget {
 	*/
 	get_UnstrippedValue(): string;
 }
-export module MaskEdit{
+export namespace MaskEdit{
 
 export interface Model {
 
@@ -9496,8 +9498,8 @@ class Menu extends ej.Widget {
 	static fn: Menu;
 	constructor(element: JQuery, options?: Menu.Model);
 	constructor(element: Element, options?: Menu.Model);
-	model:Menu.Model;
-	defaults:Menu.Model;
+	model: Menu.Model;
+	defaults: Menu.Model;
 
 	/** Disables the Menu control.
 	*   @returns {void}
@@ -9584,7 +9586,7 @@ class Menu extends ej.Widget {
 	*/
 	showItems(): void;
 }
-export module Menu{
+export namespace Menu{
 
 export interface Model {
 
@@ -9970,8 +9972,8 @@ class Pager extends ej.Widget {
 	static fn: Pager;
 	constructor(element: JQuery, options?: Pager.Model);
 	constructor(element: Element, options?: Pager.Model);
-	model:Pager.Model;
-	defaults:Pager.Model;
+	model: Pager.Model;
+	defaults: Pager.Model;
 
 	/** Send a paging request to specified page through the pager control.
 	*   @param {number} Specifies the index to be navigated
@@ -9984,7 +9986,7 @@ class Pager extends ej.Widget {
 	*/
 	refreshPager(): void;
 }
-export module Pager{
+export namespace Pager{
 
 export interface Model {
 
@@ -10078,8 +10080,8 @@ class ProgressBar extends ej.Widget {
 	static fn: ProgressBar;
 	constructor(element: JQuery, options?: ProgressBar.Model);
 	constructor(element: Element, options?: ProgressBar.Model);
-	model:ProgressBar.Model;
-	defaults:ProgressBar.Model;
+	model: ProgressBar.Model;
+	defaults: ProgressBar.Model;
 
 	/** Destroy the progressbar widget
 	*   @returns {void}
@@ -10106,7 +10108,7 @@ class ProgressBar extends ej.Widget {
 	*/
 	getValue(): number;
 }
-export module ProgressBar{
+export namespace ProgressBar{
 
 export interface Model {
 
@@ -10295,8 +10297,8 @@ class RadioButton extends ej.Widget {
 	static fn: RadioButton;
 	constructor(element: JQuery, options?: RadioButton.Model);
 	constructor(element: Element, options?: RadioButton.Model);
-	model:RadioButton.Model;
-	defaults:RadioButton.Model;
+	model: RadioButton.Model;
+	defaults: RadioButton.Model;
 
 	/** To disable the RadioButton
 	*   @returns {void}
@@ -10308,7 +10310,7 @@ class RadioButton extends ej.Widget {
 	*/
 	enable(): void;
 }
-export module RadioButton{
+export namespace RadioButton{
 
 export interface Model {
 
@@ -10481,8 +10483,8 @@ class Rating extends ej.Widget {
 	static fn: Rating;
 	constructor(element: JQuery, options?: Rating.Model);
 	constructor(element: Element, options?: Rating.Model);
-	model:Rating.Model;
-	defaults:Rating.Model;
+	model: Rating.Model;
+	defaults: Rating.Model;
 
 	/** Destroy the Rating widget all events bound will be unbind automatically and bring the control to pre-init state.
 	*   @returns {void}
@@ -10520,7 +10522,7 @@ class Rating extends ej.Widget {
 	*/
 	show(): void;
 }
-export module Rating{
+export namespace Rating{
 
 export interface Model {
 
@@ -10771,8 +10773,8 @@ class Ribbon extends ej.Widget {
 	static fn: Ribbon;
 	constructor(element: JQuery, options?: Ribbon.Model);
 	constructor(element: Element, options?: Ribbon.Model);
-	model:Ribbon.Model;
-	defaults:Ribbon.Model;
+	model: Ribbon.Model;
+	defaults: Ribbon.Model;
 
 	/** Adds contextual tab or contextual tab set dynamically in the ribbon control with contextual tabs object and index position. When index is null, ribbon contextual tab or contextual tab set is added at the last index.
 	*   @param {any} contextual tab or contextual tab set object.
@@ -10911,7 +10913,7 @@ class Ribbon extends ej.Widget {
 	*/
 	removeBackStageItem(index: number): void;
 }
-export module Ribbon{
+export namespace Ribbon{
 
 export interface Model {
 
@@ -11851,7 +11853,7 @@ enum CustomItemType{
 
 enum QuickAccessMode{
 
-	///Controls are hidden in Quick Access toolbar 
+	///Controls are hidden in Quick Access toolbar
 	None,
 
 	///Add controls in toolBar
@@ -11889,8 +11891,8 @@ class Kanban extends ej.Widget {
 	static fn: Kanban;
 	constructor(element: JQuery, options?: Kanban.Model);
 	constructor(element: Element, options?: Kanban.Model);
-	model:Kanban.Model;
-	defaults:Kanban.Model;
+	model: Kanban.Model;
+	defaults: Kanban.Model;
 
 	/** Add or remove columns in Kanban columns collections.Default action is add.
 	*   @param {Array<any>|string} Pass array of columns or string of headerText to add/remove the column in Kanban
@@ -11918,7 +11920,7 @@ class Kanban extends ej.Widget {
 	toggleColumn(headerText: any): void;
 
 	/** Expand or collapse the card based on the state of target &quot;div&quot;
-	*   @param {string|number} Pass the id of card to be toggle 
+	*   @param {string|number} Pass the id of card to be toggle
 	*   @returns {void}
 	*/
 	toggleCard(key: string|number): void;
@@ -11987,7 +11989,7 @@ class Kanban extends ej.Widget {
 
 	KanbanEdit: Kanban.KanbanEdit;
 }
-export module Kanban{
+export namespace Kanban{
 
 export interface KanbanSelection {
 
@@ -13123,7 +13125,7 @@ enum EditingType{
 	///Allows to set edit type as string edit type
 	String,
 
-	///Allows to set edit type as numeric edit type 
+	///Allows to set edit type as numeric edit type
 	Numeric,
 
 	///Allows to set edit type as drop down edit type
@@ -13168,8 +13170,8 @@ class Rotator extends ej.Widget {
 	static fn: Rotator;
 	constructor(element: JQuery, options?: Rotator.Model);
 	constructor(element: Element, options?: Rotator.Model);
-	model:Rotator.Model;
-	defaults:Rotator.Model;
+	model: Rotator.Model;
+	defaults: Rotator.Model;
 
 	/** Disables the Rotator control.
 	*   @returns {void}
@@ -13219,7 +13221,7 @@ class Rotator extends ej.Widget {
 	*/
 	updateTemplateById(index: number, id: string): void;
 }
-export module Rotator{
+export namespace Rotator{
 
 export interface Model {
 
@@ -13585,8 +13587,8 @@ class RTE extends ej.Widget {
 	static fn: RTE;
 	constructor(element: JQuery, options?: RTE.Model);
 	constructor(element: Element, options?: RTE.Model);
-	model:RTE.Model;
-	defaults:RTE.Model;
+	model: RTE.Model;
+	defaults: RTE.Model;
 
 	/** Returns the range object.
 	*   @returns {void}
@@ -13735,7 +13737,7 @@ class RTE extends ej.Widget {
 	*/
 	show(): void;
 }
-export module RTE{
+export namespace RTE{
 
 export interface Model {
 
@@ -14356,8 +14358,8 @@ class Slider extends ej.Widget {
 	static fn: Slider;
 	constructor(element: JQuery, options?: Slider.Model);
 	constructor(element: Element, options?: Slider.Model);
-	model:Slider.Model;
-	defaults:Slider.Model;
+	model: Slider.Model;
+	defaults: Slider.Model;
 
 	/** To disable the slider
 	*   @returns {void}
@@ -14379,7 +14381,7 @@ class Slider extends ej.Widget {
 	*/
 	setValue(): void;
 }
-export module Slider{
+export namespace Slider{
 
 export interface Model {
 
@@ -14550,7 +14552,7 @@ export interface ChangeEventArgs {
 	*/
 	value?: number;
 
-	/** returns true if event triggered by interaction else returns false. 
+	/** returns true if event triggered by interaction else returns false.
 	*/
 	isInteraction?: boolean;
 }
@@ -14686,8 +14688,8 @@ class SplitButton extends ej.Widget {
 	static fn: SplitButton;
 	constructor(element: JQuery, options?: SplitButton.Model);
 	constructor(element: Element, options?: SplitButton.Model);
-	model:SplitButton.Model;
-	defaults:SplitButton.Model;
+	model: SplitButton.Model;
+	defaults: SplitButton.Model;
 
 	/** destroy the split button widget all events bound using this._on will be unbind automatically and bring the control to pre-init state.
 	*   @returns {void}
@@ -14714,7 +14716,7 @@ class SplitButton extends ej.Widget {
 	*/
 	show(): void;
 }
-export module SplitButton{
+export namespace SplitButton{
 
 export interface Model {
 
@@ -15034,8 +15036,8 @@ class Splitter extends ej.Widget {
 	static fn: Splitter;
 	constructor(element: JQuery, options?: Splitter.Model);
 	constructor(element: Element, options?: Splitter.Model);
-	model:Splitter.Model;
-	defaults:Splitter.Model;
+	model: Splitter.Model;
+	defaults: Splitter.Model;
 
 	/** To add a new pane to splitter control.
 	*   @param {string} content of pane.
@@ -15068,7 +15070,7 @@ class Splitter extends ej.Widget {
 	*/
 	removeItem(index: number): void;
 }
-export module Splitter{
+export namespace Splitter{
 
 export interface Model {
 
@@ -15259,8 +15261,8 @@ class Tab extends ej.Widget {
 	static fn: Tab;
 	constructor(element: JQuery, options?: Tab.Model);
 	constructor(element: Element, options?: Tab.Model);
-	model:Tab.Model;
-	defaults:Tab.Model;
+	model: Tab.Model;
+	defaults: Tab.Model;
 
 	/** Add new tab items with given name, URL and given index position, if index null itâ€™s add last item.
 	*   @param {string} URL name / tab id.
@@ -15315,7 +15317,7 @@ class Tab extends ej.Widget {
 	*/
 	showItem(index: number): void;
 }
-export module Tab{
+export namespace Tab{
 
 export interface Model {
 
@@ -15798,7 +15800,7 @@ enum Position{
 	///Tab headers display to top position
 	Top,
 
-	///Tab headers display to bottom position 
+	///Tab headers display to bottom position
 	Bottom,
 
 	///Tab headers display to left position.
@@ -15830,8 +15832,8 @@ class TagCloud extends ej.Widget {
 	static fn: TagCloud;
 	constructor(element: JQuery, options?: TagCloud.Model);
 	constructor(element: Element, options?: TagCloud.Model);
-	model:TagCloud.Model;
-	defaults:TagCloud.Model;
+	model: TagCloud.Model;
+	defaults: TagCloud.Model;
 
 	/** Inserts a new item into the TagCloud
 	*   @param {string} Insert new item into the TagCloud
@@ -15858,7 +15860,7 @@ class TagCloud extends ej.Widget {
 	*/
 	removeAt(position: number): void;
 }
-export module TagCloud{
+export namespace TagCloud{
 
 export interface Model {
 
@@ -16067,8 +16069,8 @@ class TimePicker extends ej.Widget {
 	static fn: TimePicker;
 	constructor(element: JQuery, options?: TimePicker.Model);
 	constructor(element: Element, options?: TimePicker.Model);
-	model:TimePicker.Model;
-	defaults:TimePicker.Model;
+	model: TimePicker.Model;
+	defaults: TimePicker.Model;
 
 	/** Allows you to disable the TimePicker.
 	*   @returns {void}
@@ -16100,7 +16102,7 @@ class TimePicker extends ej.Widget {
 	*/
 	show(): void;
 }
-export module TimePicker{
+export namespace TimePicker{
 
 export interface Model {
 
@@ -16163,12 +16165,12 @@ export interface Model {
 	locale?: string;
 
 	/** Sets the maximum time value to the TimePicker.
-	*   @Default {11:59:59 PM}
+	*   @Default {11: 59: 59 PM}
 	*/
 	maxTime?: string;
 
 	/** Sets the minimum time value to the TimePicker.
-	*   @Default {12:00:00 AM}
+	*   @Default {12: 00: 00 AM}
 	*/
 	minTime?: string;
 
@@ -16208,7 +16210,7 @@ export interface Model {
 	showRoundedCorner?: boolean;
 
 	/** Defines the time format displayed in the TimePicker.
-	*   @Default {h:mm tt}
+	*   @Default {h: mm tt}
 	*/
 	timeFormat?: string;
 
@@ -16471,8 +16473,8 @@ class ToggleButton extends ej.Widget {
 	static fn: ToggleButton;
 	constructor(element: JQuery, options?: ToggleButton.Model);
 	constructor(element: Element, options?: ToggleButton.Model);
-	model:ToggleButton.Model;
-	defaults:ToggleButton.Model;
+	model: ToggleButton.Model;
+	defaults: ToggleButton.Model;
 
 	/** Allows you to destroy the ToggleButton widget.
 	*   @returns {void}
@@ -16489,7 +16491,7 @@ class ToggleButton extends ej.Widget {
 	*/
 	enable(): void;
 }
-export module ToggleButton{
+export namespace ToggleButton{
 
 export interface Model {
 
@@ -16678,8 +16680,8 @@ class Toolbar extends ej.Widget {
 	static fn: Toolbar;
 	constructor(element: JQuery, options?: Toolbar.Model);
 	constructor(element: Element, options?: Toolbar.Model);
-	model:Toolbar.Model;
-	defaults:Toolbar.Model;
+	model: Toolbar.Model;
+	defaults: Toolbar.Model;
 
 	/** Deselect the specified Toolbar item.
 	*   @param {any} The element need to be deselected
@@ -16766,7 +16768,7 @@ class Toolbar extends ej.Widget {
 	*/
 	show(): void;
 }
-export module Toolbar{
+export namespace Toolbar{
 
 export interface Model {
 
@@ -17023,8 +17025,8 @@ class TreeView extends ej.Widget {
 	static fn: TreeView;
 	constructor(element: JQuery, options?: TreeView.Model);
 	constructor(element: Element, options?: TreeView.Model);
-	model:TreeView.Model;
-	defaults:TreeView.Model;
+	model: TreeView.Model;
+	defaults: TreeView.Model;
 
 	/** To add a Node or collection of nodes in TreeView. If target tree node is specified, then the given nodes are added as child of target tree node, otherwise nodes are added in TreeView.
 	*   @param {string|any} New node text or JSON object
@@ -17341,7 +17343,7 @@ class TreeView extends ej.Widget {
 	*/
 	updateText(target: string|any, newText: string): void;
 }
-export module TreeView{
+export namespace TreeView{
 
 export interface Model {
 
@@ -17641,7 +17643,7 @@ export interface BeforeCollapseEventArgs {
 	*/
 	parentId?: string;
 
-	/** returns the format asynchronous or synchronous 
+	/** returns the format asynchronous or synchronous
 	*/
 	async?: boolean;
 }
@@ -17769,7 +17771,7 @@ export interface BeforeExpandEventArgs {
 	*/
 	parentId?: string;
 
-	/** returns the format asynchronous or synchronous 
+	/** returns the format asynchronous or synchronous
 	*/
 	async?: boolean;
 }
@@ -18132,7 +18134,7 @@ export interface NodeCollapseEventArgs {
 	*/
 	isChildLoaded?: boolean;
 
-	/** returns the format asynchronous or synchronous 
+	/** returns the format asynchronous or synchronous
 	*/
 	async?: boolean;
 }
@@ -18436,7 +18438,7 @@ export interface NodeExpandEventArgs {
 	*/
 	parentId?: string;
 
-	/** returns the format asynchronous or synchronous 
+	/** returns the format asynchronous or synchronous
 	*/
 	async?: boolean;
 }
@@ -18696,8 +18698,8 @@ class Uploadbox extends ej.Widget {
 	static fn: Uploadbox;
 	constructor(element: JQuery, options?: Uploadbox.Model);
 	constructor(element: Element, options?: Uploadbox.Model);
-	model:Uploadbox.Model;
-	defaults:Uploadbox.Model;
+	model: Uploadbox.Model;
+	defaults: Uploadbox.Model;
 
 	/** The destroy method destroys the control and brings the control to a pre-init state. All the events of the Upload control is bound by using this._on unbinds automatically.
 	*   @returns {void}
@@ -18719,7 +18721,7 @@ class Uploadbox extends ej.Widget {
 	*/
 	refresh(): void;
 }
-export module Uploadbox{
+export namespace Uploadbox{
 
 export interface Model {
 
@@ -18748,12 +18750,12 @@ export interface Model {
 	cssClass?: string;
 
 	/** Specifies the custom file details in the dialog popup on initialization.
-	*   @Default {{ title:true, name:true, size:true, status:true, action:true}}
+	*   @Default {{ title: true, name: true, size: true, status: true, action: true}}
 	*/
 	customFileDetails?: CustomFileDetails;
 
 	/** Specifies the actions for dialog popup while initialization.
-	*   @Default {{ modal:false, closeOnComplete:false, content:null, drag:true}}
+	*   @Default {{ modal: false, closeOnComplete: false, content: null, drag: true}}
 	*/
 	dialogAction?: DialogAction;
 
@@ -19198,8 +19200,8 @@ class WaitingPopup extends ej.Widget {
 	static fn: WaitingPopup;
 	constructor(element: JQuery, options?: WaitingPopup.Model);
 	constructor(element: Element, options?: WaitingPopup.Model);
-	model:WaitingPopup.Model;
-	defaults:WaitingPopup.Model;
+	model: WaitingPopup.Model;
+	defaults: WaitingPopup.Model;
 
 	/** To hide the waiting popup
 	*   @returns {void}
@@ -19216,7 +19218,7 @@ class WaitingPopup extends ej.Widget {
 	*/
 	show(): void;
 }
-export module WaitingPopup{
+export namespace WaitingPopup{
 
 export interface Model {
 
@@ -19302,11 +19304,11 @@ class Grid extends ej.Widget {
 	static fn: Grid;
 	constructor(element: JQuery, options?: Grid.Model);
 	constructor(element: Element, options?: Grid.Model);
-	model:Grid.Model;
-	defaults:Grid.Model;
+	model: Grid.Model;
+	defaults: Grid.Model;
 
 	/** Adds a grid model property which is to be ignored upon exporting.
-	*   @param {Array<any>} Pass the array of parameters which need to be ignored on exporting 
+	*   @param {Array<any>} Pass the array of parameters which need to be ignored on exporting
 	*   @returns {void}
 	*/
 	addIgnoreOnExport(propertyNames: Array<any>): void;
@@ -19732,7 +19734,7 @@ class Grid extends ej.Widget {
 	saveCell(): boolean;
 
 	/** We can prevent the client side cellSave event triggering by passing the preventSaveEvent argument as true.
-	*   @param {boolean} optionalIf we pass preventSaveEvent as true, it prevents the client side cellSave event triggering 
+	*   @param {boolean} optionalIf we pass preventSaveEvent as true, it prevents the client side cellSave event triggering
 	*   @returns {void}
 	*/
 	saveCell(preventSaveEvent: boolean): void;
@@ -19852,7 +19854,7 @@ class Grid extends ej.Widget {
 	*/
 	windowonresize(): void;
 }
-export module Grid{
+export namespace Grid{
 
 export interface Model {
 
@@ -20063,7 +20065,7 @@ export interface Model {
 	*/
 	resizeSettings?: ResizeSettings;
 
-	/** Gets or sets a value that indicates to render the grid with template rows. The template row must be a table row. That table row must have the JavaScript render binding format ({{:columnName}}) then the grid data source binds the data to the corresponding table row of the template.
+	/** Gets or sets a value that indicates to render the grid with template rows. The template row must be a table row. That table row must have the JavaScript render binding format ({{: columnName}}) then the grid data source binds the data to the corresponding table row of the template.
 	*   @Default {null}
 	*/
 	rowTemplate?: string;
@@ -22868,15 +22870,15 @@ class Sparkline extends ej.Widget {
 	static fn: Sparkline;
 	constructor(element: JQuery, options?: Sparkline.Model);
 	constructor(element: Element, options?: Sparkline.Model);
-	model:Sparkline.Model;
-	defaults:Sparkline.Model;
+	model: Sparkline.Model;
+	defaults: Sparkline.Model;
 
 	/** Redraws the entire sparkline. You can call this method whenever you update, add or remove points from the data source or whenever you want to refresh the UI.
 	*   @returns {void}
 	*/
 	redraw(): void;
 }
-export module Sparkline{
+export namespace Sparkline{
 
 export interface Model {
 
@@ -23055,7 +23057,7 @@ export interface LoadedEventArgs {
 
 export interface TooltipInitializeEventArgs {
 
-	/** Set this option to true to cancel the event    
+	/** Set this option to true to cancel the event
 	*/
 	cancel?: boolean;
 
@@ -23179,7 +23181,7 @@ export interface PointRegionMouseClickEventArgs {
 
 export interface SparklineMouseMoveEventArgs {
 
-	/** Set this option to true to cancel the event    
+	/** Set this option to true to cancel the event
 	*/
 	cancel?: boolean;
 
@@ -23194,7 +23196,7 @@ export interface SparklineMouseMoveEventArgs {
 
 export interface SparklineMouseLeaveEventArgs {
 
-	/** Set this option to true to cancel the event    
+	/** Set this option to true to cancel the event
 	*/
 	cancel?: boolean;
 
@@ -23464,8 +23466,8 @@ class PivotGrid extends ej.Widget {
 	static fn: PivotGrid;
 	constructor(element: JQuery, options?: PivotGrid.Model);
 	constructor(element: Element, options?: PivotGrid.Model);
-	model:PivotGrid.Model;
-	defaults:PivotGrid.Model;
+	model: PivotGrid.Model;
+	defaults: PivotGrid.Model;
 
 	/** Perform an asynchronous HTTP (AJAX) request.
 	*   @returns {void}
@@ -23502,7 +23504,7 @@ class PivotGrid extends ej.Widget {
 	*/
 	renderControlFromJSON(): void;
 }
-export module PivotGrid{
+export namespace PivotGrid{
 
 export interface Model {
 
@@ -24432,15 +24434,15 @@ class PivotSchemaDesigner extends ej.Widget {
 	static fn: PivotSchemaDesigner;
 	constructor(element: JQuery, options?: PivotSchemaDesigner.Model);
 	constructor(element: Element, options?: PivotSchemaDesigner.Model);
-	model:PivotSchemaDesigner.Model;
-	defaults:PivotSchemaDesigner.Model;
+	model: PivotSchemaDesigner.Model;
+	defaults: PivotSchemaDesigner.Model;
 
 	/** Perform an asynchronous HTTP (AJAX) request.
 	*   @returns {void}
 	*/
 	doAjaxPost(): void;
 }
-export module PivotSchemaDesigner{
+export namespace PivotSchemaDesigner{
 
 export interface Model {
 
@@ -24655,15 +24657,15 @@ class PivotPager extends ej.Widget {
 	static fn: PivotPager;
 	constructor(element: JQuery, options?: PivotPager.Model);
 	constructor(element: Element, options?: PivotPager.Model);
-	model:PivotPager.Model;
-	defaults:PivotPager.Model;
+	model: PivotPager.Model;
+	defaults: PivotPager.Model;
 
 	/** This function initializes the page counts and page numbers for the PivotPager.
 	*   @returns {void}
 	*/
 	initPagerProperties(): void;
 }
-export module PivotPager{
+export namespace PivotPager{
 
 export interface Model {
 
@@ -24721,8 +24723,8 @@ class PivotChart extends ej.Widget {
 	static fn: PivotChart;
 	constructor(element: JQuery, options?: PivotChart.Model);
 	constructor(element: Element, options?: PivotChart.Model);
-	model:PivotChart.Model;
-	defaults:PivotChart.Model;
+	model: PivotChart.Model;
+	defaults: PivotChart.Model;
 
 	/** Perform an asynchronous HTTP (AJAX) request.
 	*   @returns {void}
@@ -24749,7 +24751,7 @@ class PivotChart extends ej.Widget {
 	*/
 	renderControlSuccess(): void;
 }
-export module PivotChart{
+export namespace PivotChart{
 
 export interface Model {
 
@@ -25176,8 +25178,8 @@ class PivotClient extends ej.Widget {
 	static fn: PivotClient;
 	constructor(element: JQuery, options?: PivotClient.Model);
 	constructor(element: Element, options?: PivotClient.Model);
-	model:PivotClient.Model;
-	defaults:PivotClient.Model;
+	model: PivotClient.Model;
+	defaults: PivotClient.Model;
 
 	/** Perform an asynchronous HTTP (AJAX) request.
 	*   @returns {void}
@@ -25189,7 +25191,7 @@ class PivotClient extends ej.Widget {
 	*/
 	doPostBack(): void;
 }
-export module PivotClient{
+export namespace PivotClient{
 
 export interface Model {
 
@@ -25647,8 +25649,8 @@ class PivotGauge extends ej.Widget {
 	static fn: PivotGauge;
 	constructor(element: JQuery, options?: PivotGauge.Model);
 	constructor(element: Element, options?: PivotGauge.Model);
-	model:PivotGauge.Model;
-	defaults:PivotGauge.Model;
+	model: PivotGauge.Model;
+	defaults: PivotGauge.Model;
 
 	/** Perform an asynchronous HTTP (AJAX) request.
 	*   @returns {void}
@@ -25670,7 +25672,7 @@ class PivotGauge extends ej.Widget {
 	*/
 	renderControlFromJSON(): void;
 }
-export module PivotGauge{
+export namespace PivotGauge{
 
 export interface Model {
 
@@ -26098,8 +26100,8 @@ class PivotTreeMap extends ej.Widget {
 	static fn: PivotTreeMap;
 	constructor(element: JQuery, options?: PivotTreeMap.Model);
 	constructor(element: Element, options?: PivotTreeMap.Model);
-	model:PivotTreeMap.Model;
-	defaults:PivotTreeMap.Model;
+	model: PivotTreeMap.Model;
+	defaults: PivotTreeMap.Model;
 
 	/** Perform an asynchronous HTTP (AJAX) request.
 	*   @returns {void}
@@ -26121,7 +26123,7 @@ class PivotTreeMap extends ej.Widget {
 	*/
 	renderControlSuccess(): void;
 }
-export module PivotTreeMap{
+export namespace PivotTreeMap{
 
 export interface Model {
 
@@ -26461,8 +26463,8 @@ class Schedule extends ej.Widget {
 	static fn: Schedule;
 	constructor(element: JQuery, options?: Schedule.Model);
 	constructor(element: Element, options?: Schedule.Model);
-	model:Schedule.Model;
-	defaults:Schedule.Model;
+	model: Schedule.Model;
+	defaults: Schedule.Model;
 
 	/** This method is used to delete the appointment based on the guid value or the appointment data passed to it.
 	*   @param {string|any} GUID value of an appointment element or an appointment object
@@ -26541,7 +26543,7 @@ class Schedule extends ej.Widget {
 	*/
 	refreshAppointments(): void;
 }
-export module Schedule{
+export namespace Schedule{
 
 export interface Model {
 
@@ -27553,7 +27555,7 @@ export interface ResizeStopEventArgs {
 
 export interface OverflowButtonClickEventArgs {
 
-	/** Returns the object consisting of start time, end time and resource value of the underlying cell on which the clicked overflow button is present.  
+	/** Returns the object consisting of start time, end time and resource value of the underlying cell on which the clicked overflow button is present.
 	*/
 	object?: any;
 
@@ -27576,7 +27578,7 @@ export interface OverflowButtonClickEventArgs {
 
 export interface OverflowButtonHoverEventArgs {
 
-	/** Returns the object consisting of start time, end time and resource value of the underlying cell on which the overflow button is currently hovered.  
+	/** Returns the object consisting of start time, end time and resource value of the underlying cell on which the overflow button is currently hovered.
 	*/
 	object?: any;
 
@@ -28176,8 +28178,8 @@ class RecurrenceEditor extends ej.Widget {
 	static fn: RecurrenceEditor;
 	constructor(element: JQuery, options?: RecurrenceEditor.Model);
 	constructor(element: Element, options?: RecurrenceEditor.Model);
-	model:RecurrenceEditor.Model;
-	defaults:RecurrenceEditor.Model;
+	model: RecurrenceEditor.Model;
+	defaults: RecurrenceEditor.Model;
 
 	/** Generates the recurrence rule with the options selected within the Recurrence Editor.
 	*   @returns {void}
@@ -28198,7 +28200,7 @@ class RecurrenceEditor extends ej.Widget {
 	*/
 	recurrenceRuleSplit(recurrenceRule: string, exDate: any): void;
 }
-export module RecurrenceEditor{
+export namespace RecurrenceEditor{
 
 export interface Model {
 
@@ -28283,8 +28285,8 @@ class Gantt extends ej.Widget {
 	static fn: Gantt;
 	constructor(element: JQuery, options?: Gantt.Model);
 	constructor(element: Element, options?: Gantt.Model);
-	model:Gantt.Model;
-	defaults:Gantt.Model;
+	model: Gantt.Model;
+	defaults: Gantt.Model;
 
 	/** To add item in Gantt
 	*   @param {any} Item to add in Gantt row.
@@ -28386,7 +28388,7 @@ class Gantt extends ej.Widget {
 	*/
 	showColumn(headerText: string): void;
 }
-export module Gantt{
+export namespace Gantt{
 
 export interface Model {
 
@@ -29842,8 +29844,8 @@ class ReportViewer extends ej.Widget {
 	static fn: ReportViewer;
 	constructor(element: JQuery, options?: ReportViewer.Model);
 	constructor(element: Element, options?: ReportViewer.Model);
-	model:ReportViewer.Model;
-	defaults:ReportViewer.Model;
+	model: ReportViewer.Model;
+	defaults: ReportViewer.Model;
 
 	/** Export the report to the specified format.
 	*   @returns {void}
@@ -29915,7 +29917,7 @@ class ReportViewer extends ej.Widget {
 	*/
 	refresh(): void;
 }
-export module ReportViewer{
+export namespace ReportViewer{
 
 export interface Model {
 
@@ -30478,8 +30480,8 @@ class TreeGrid extends ej.Widget {
 	static fn: TreeGrid;
 	constructor(element: JQuery, options?: TreeGrid.Model);
 	constructor(element: Element, options?: TreeGrid.Model);
-	model:TreeGrid.Model;
-	defaults:TreeGrid.Model;
+	model: TreeGrid.Model;
+	defaults: TreeGrid.Model;
 
 	/** Adds a new row in TreeGrid, while allowAdding is set to true
 	*   @param {any} Item to add in TreeGrid row.
@@ -30503,7 +30505,7 @@ class TreeGrid extends ej.Widget {
 
 	/** To rename a column with the specified name
 	*   @param {number} Index of the column to be renamed
-	*   @param {string} Header text of the column 
+	*   @param {string} Header text of the column
 	*   @returns {void}
 	*/
 	renameColumn(columnIndex: number, name: string): void;
@@ -30581,7 +30583,7 @@ class TreeGrid extends ej.Widget {
 	*/
 	sortColumn(columnName: string, columnSortDirection: string): void;
 }
-export module TreeGrid{
+export namespace TreeGrid{
 
 export interface Model {
 
@@ -31896,8 +31898,8 @@ class GroupButton extends ej.Widget {
 	static fn: GroupButton;
 	constructor(element: JQuery, options?: GroupButton.Model);
 	constructor(element: Element, options?: GroupButton.Model);
-	model:GroupButton.Model;
-	defaults:GroupButton.Model;
+	model: GroupButton.Model;
+	defaults: GroupButton.Model;
 
 	/** Remove the selection state of the specified the button element from the GroupButton
 	*   @param {JQuery} Specific button element
@@ -31982,7 +31984,7 @@ class GroupButton extends ej.Widget {
 	*/
 	showItem(element: JQuery): void;
 }
-export module GroupButton{
+export namespace GroupButton{
 
 export interface Model {
 
@@ -32217,11 +32219,11 @@ export interface SelectEventArgs {
 	status?: boolean;
 }
 }
-enum GroupButtonMode 
+enum GroupButtonMode
 {
-//Sets the GroupButton to work as checkbox mode 
+//Sets the GroupButton to work as checkbox mode
 CheckBox,
-//Sets the RadioButton to work as radio button mode  
+//Sets the RadioButton to work as radio button mode
 RadioButton,
 }
 
@@ -32229,8 +32231,8 @@ class NavigationDrawer extends ej.Widget {
 	static fn: NavigationDrawer;
 	constructor(element: JQuery, options?: NavigationDrawer.Model);
 	constructor(element: Element, options?: NavigationDrawer.Model);
-	model:NavigationDrawer.Model;
-	defaults:NavigationDrawer.Model;
+	model: NavigationDrawer.Model;
+	defaults: NavigationDrawer.Model;
 
 	/** To close the navigation drawer control
 	*   @returns {void}
@@ -32247,7 +32249,7 @@ class NavigationDrawer extends ej.Widget {
 	*/
 	toggle(): void;
 }
-export module NavigationDrawer{
+export namespace NavigationDrawer{
 
 export interface Model {
 
@@ -32358,8 +32360,8 @@ class RadialMenu extends ej.Widget {
 	static fn: RadialMenu;
 	constructor(element: JQuery, options?: RadialMenu.Model);
 	constructor(element: Element, options?: RadialMenu.Model);
-	model:RadialMenu.Model;
-	defaults:RadialMenu.Model;
+	model: RadialMenu.Model;
+	defaults: RadialMenu.Model;
 
 	/** To hide the radialmenu
 	*   @returns {void}
@@ -32436,7 +32438,7 @@ class RadialMenu extends ej.Widget {
 	*/
 	hideBadge(): void;
 }
-export module RadialMenu{
+export namespace RadialMenu{
 
 export interface Model {
 
@@ -32605,8 +32607,8 @@ class Tile extends ej.Widget {
 	static fn: Tile;
 	constructor(element: JQuery, options?: Tile.Model);
 	constructor(element: Element, options?: Tile.Model);
-	model:Tile.Model;
-	defaults:Tile.Model;
+	model: Tile.Model;
+	defaults: Tile.Model;
 
 	/** Update the image template of tile item to another one.
 	*   @param {string} UpdateTemplate by using id
@@ -32615,7 +32617,7 @@ class Tile extends ej.Widget {
 	*/
 	updateTemplate(id: string, index: number): void;
 }
-export module Tile{
+export namespace Tile{
 
 export interface Model {
 
@@ -32715,7 +32717,7 @@ export interface MouseDownEventArgs {
 	*/
 	text?: string;
 
-	/** returns the index of current tile item 
+	/** returns the index of current tile item
 	*/
 	index?: number;
 }
@@ -32738,7 +32740,7 @@ export interface MouseUpEventArgs {
 	*/
 	text?: boolean;
 
-	/** returns the index of current tile item 
+	/** returns the index of current tile item
 	*/
 	index?: number;
 }
@@ -32949,8 +32951,8 @@ class RadialSlider extends ej.Widget {
 	static fn: RadialSlider;
 	constructor(element: JQuery, options?: RadialSlider.Model);
 	constructor(element: Element, options?: RadialSlider.Model);
-	model:RadialSlider.Model;
-	defaults:RadialSlider.Model;
+	model: RadialSlider.Model;
+	defaults: RadialSlider.Model;
 
 	/** To show the radialslider
 	*   @returns {void}
@@ -32962,7 +32964,7 @@ class RadialSlider extends ej.Widget {
 	*/
 	hide(): void;
 }
-export module RadialSlider{
+export namespace RadialSlider{
 
 export interface Model {
 
@@ -33060,30 +33062,30 @@ export interface Model {
 
 export interface ChangeEventArgs {
 
-	/**  returns the Radialslider model 
+	/**  returns the Radialslider model
 	*/
 	model?: any;
 
-	/**  if the event should be canceled; otherwise, false. 
+	/**  if the event should be canceled; otherwise, false.
 	*/
 	cancel?: boolean;
 
-	/**  returns the initial value of Radial slider 
+	/**  returns the initial value of Radial slider
 	*/
 	oldValue?: number;
 
-	/**  returns the name of the event 
+	/**  returns the name of the event
 	*/
 	type?: string;
 
-	/**  returns the current value of the Radial slider 
+	/**  returns the current value of the Radial slider
 	*/
 	value?: number;
 }
 
 export interface CreateEventArgs {
 
-	/**  if the event should be canceled; otherwise, false. 
+	/**  if the event should be canceled; otherwise, false.
 	*/
 	cancel?: boolean;
 
@@ -33091,91 +33093,91 @@ export interface CreateEventArgs {
 	*/
 	model?: any;
 
-	/**  returns the name of the event 
+	/**  returns the name of the event
 	*/
 	type?: string;
 }
 
 export interface MouseoverEventArgs {
 
-	/**  if the event should be canceled; otherwise, false. 
+	/**  if the event should be canceled; otherwise, false.
 	*/
 	cancel?: boolean;
 
-	/**  returns the Radialslider model 
+	/**  returns the Radialslider model
 	*/
 	model?: any;
 
-	/**  returns the value selected 
+	/**  returns the value selected
 	*/
 	selectedValue?: number;
 
-	/**  returns the name of the event 
+	/**  returns the name of the event
 	*/
 	type?: string;
 
-	/**  returns the current value selected in Radial slider 
+	/**  returns the current value selected in Radial slider
 	*/
 	value?: number;
 }
 
 export interface SlideEventArgs {
 
-	/**  if the event should be canceled; otherwise, false. 
+	/**  if the event should be canceled; otherwise, false.
 	*/
 	cancel?: boolean;
 
-	/**  returns the Radialslider model 
+	/**  returns the Radialslider model
 	*/
 	model?: any;
 
-	/**  returns the value selected in Radial slider 
+	/**  returns the value selected in Radial slider
 	*/
 	selectedValue?: number;
 
-	/**  returns the name of the event 
+	/**  returns the name of the event
 	*/
 	type?: string;
 
-	/**  returns the currently selected value 
+	/**  returns the currently selected value
 	*/
 	value?: number;
 }
 
 export interface StartEventArgs {
 
-	/**  if the event should be canceled; otherwise, false. 
+	/**  if the event should be canceled; otherwise, false.
 	*/
 	cancel?: boolean;
 
-	/**  returns the Radialslider model 
+	/**  returns the Radialslider model
 	*/
 	model?: any;
 
-	/**  returns the name of the event 
+	/**  returns the name of the event
 	*/
 	type?: string;
 
-	/**  returns the current value selected in Radial slider 
+	/**  returns the current value selected in Radial slider
 	*/
 	value?: number;
 }
 
 export interface StopEventArgs {
 
-	/**  if the event should be canceled; otherwise, false. 
+	/**  if the event should be canceled; otherwise, false.
 	*/
 	cancel?: boolean;
 
-	/**  returns the Radialslider model 
+	/**  returns the Radialslider model
 	*/
 	model?: any;
 
-	/**  returns the name of the event 
+	/**  returns the name of the event
 	*/
 	type?: string;
 
-	/**  returns the current value selected in Radial slider 
+	/**  returns the current value selected in Radial slider
 	*/
 	value?: number;
 }
@@ -33185,8 +33187,8 @@ class Spreadsheet extends ej.Widget {
 	static fn: Spreadsheet;
 	constructor(element: JQuery, options?: Spreadsheet.Model);
 	constructor(element: Element, options?: Spreadsheet.Model);
-	model:Spreadsheet.Model;
-	defaults:Spreadsheet.Model;
+	model: Spreadsheet.Model;
+	defaults: Spreadsheet.Model;
 
 	/** This method is used to add custom formulas in Spreadsheet.
 	*   @param {string} Pass the name of the formula.
@@ -33201,13 +33203,13 @@ class Spreadsheet extends ej.Widget {
 	addNewSheet(): void;
 
 	/** It is used to clear all the data and format in the specified range of cells in Spreadsheet.
-	*   @param {string} Optional.  If range is specified, then it will clear all content in the specified range else it will use the current selected range. 
+	*   @param {string} Optional.  If range is specified, then it will clear all content in the specified range else it will use the current selected range.
 	*   @returns {void}
 	*/
 	clearAll(range?: string): void;
 
 	/** This property is used to clear all the formats applied in the specified range in Spreadsheet.
-	*   @param {string} Optional.  If range is specified, then it will clear all format in the specified range else it will use the current selected range. 
+	*   @param {string} Optional.  If range is specified, then it will clear all format in the specified range else it will use the current selected range.
 	*   @returns {void}
 	*/
 	clearAllFormat(range?: string): void;
@@ -33219,7 +33221,7 @@ class Spreadsheet extends ej.Widget {
 	clearBorder(range?: string): void;
 
 	/** This property is used to clear the contents in the specified range in Spreadsheet.
-	*   @param {string} Optional.  If the range is specified, then it will clear the content in the specified range else it will use the current selected range. 
+	*   @param {string} Optional.  If the range is specified, then it will clear the content in the specified range else it will use the current selected range.
 	*   @returns {void}
 	*/
 	clearContents(range?: string): void;
@@ -33231,10 +33233,10 @@ class Spreadsheet extends ej.Widget {
 	clearRange(rangeName: string): void;
 
 	/** It is used to remove data in the specified range of cells based on the defined property.
-	*   @param {Array<any>|string} Optional.  If range is specified, it will clear data for the specified range else it will use the current selected range. 
-	*   @param {string} Optional.  If property is specified, it will remove the specified property in the range else it will remove default properties 
-	*   @param {any} Optional. 
-	*   @param {boolean} Optional.  If pass true, if you want to skip the hidden rows 
+	*   @param {Array<any>|string} Optional.  If range is specified, it will clear data for the specified range else it will use the current selected range.
+	*   @param {string} Optional.  If property is specified, it will remove the specified property in the range else it will remove default properties
+	*   @param {any} Optional.
+	*   @param {boolean} Optional.  If pass true, if you want to skip the hidden rows
 	*   @param {any} Optional. Pass the status to perform undo and redo operation.
 	*   @param {any} Optional. It specifies whether to skip element processing or not.
 	*   @returns {void}
@@ -33360,7 +33362,7 @@ class Spreadsheet extends ej.Widget {
 	getRange(startRIndex: number, startCIndex: number, endRIndex: number, endCIndex: number, sheetIdx: number): HTMLElement;
 
 	/** This method is used to get the data in specified range in Spreadsheet.
-	*   @param {any} Optional.  Pass the range, property, sheetIdx, valueOnly in options. 
+	*   @param {any} Optional.  Pass the range, property, sheetIdx, valueOnly in options.
 	*   @returns {Array<any>}
 	*/
 	getRangeData(options?: any): Array<any>;
@@ -33644,7 +33646,7 @@ class Spreadsheet extends ej.Widget {
 
 	/** This method is used to update the data for the specified range of cells in the Spreadsheet.
 	*   @param {any} Pass the cells data that you want to update.
-	*   @param {Array<any>} Optional.  If range is specified, it will update data for the specified range  else it will use the current selected range. 
+	*   @param {Array<any>} Optional.  If range is specified, it will update data for the specified range  else it will use the current selected range.
 	*   @returns {void}
 	*/
 	updateData(data: any, range?: Array<any>): void;
@@ -33714,7 +33716,7 @@ class Spreadsheet extends ej.Widget {
 
 	XLValidate: Spreadsheet.XLValidate;
 }
-export module Spreadsheet{
+export namespace Spreadsheet{
 
 export interface XLCellType {
 
@@ -33803,7 +33805,7 @@ export interface XLClipboard {
 export interface XLComment {
 
 	/** This method is used to delete the comment in the specified range in Spreadsheet.
-	*   @param {Array<any>|string} Optional.  If range is specified, it will delete comments for the specified range else it will use the current selected range. 
+	*   @param {Array<any>|string} Optional.  If range is specified, it will delete comments for the specified range else it will use the current selected range.
 	*   @param {number} Optional.  If sheetIdx is specified, it will delete comment in specified sheet else it will use active sheet.
 	*   @param {boolean} Optional.  Pass true, if you want to skip the hidden rows data.
 	*   @returns {void}
@@ -33811,7 +33813,7 @@ export interface XLComment {
 	deleteComment(range: Array<any>|string,sheetIdx: number,skipHiddenRow: boolean): void;
 
 	/** This method is used to edit the comment in the target Cell in Spreadsheet.
-	*   @param {any} Optional.  Pass the row index and column index of the cell which contains comment. 
+	*   @param {any} Optional.  Pass the row index and column index of the cell which contains comment.
 	*   @returns {void}
 	*/
 	editComment(targetCell: any): void;
@@ -33833,9 +33835,9 @@ export interface XLComment {
 	getComment(cell: HTMLElement): any;
 
 	/** This method is used to set new comment in Spreadsheet.
-	*   @param {string|Array<any>} Optional.  If we pass the range comment will set in the range otherwise it will set with selected cells. 
+	*   @param {string|Array<any>} Optional.  If we pass the range comment will set in the range otherwise it will set with selected cells.
 	*   @param {string} Optional.  Pass the comment data.
-	*   @param {boolean} Optional.  Pass true to show comment in edit mode 
+	*   @param {boolean} Optional.  Pass true to show comment in edit mode
 	*   @returns {void}
 	*/
 	setComment(range: string|Array<any>,data: string,showEditPanel: boolean): void;
@@ -33935,7 +33937,7 @@ export interface XLEdit {
 	/** This method is used to update a particular cell value and its format in the Spreadsheet.
 	*   @param {any} Pass row index and column index of the cell.
 	*   @param {string|number} Pass the cell value.
-	*   @param {string} Pass the class name to update format. 
+	*   @param {string} Pass the class name to update format.
 	*   @param {number} Pass sheet index.
 	*   @returns {void}
 	*/
@@ -33945,7 +33947,7 @@ export interface XLEdit {
 export interface XLExport {
 
 	/** This method is used to save the sheet data as Excel or CSV document (.xls, .xlsx and .csv) in Spreadsheet.
-	*   @param {string} Pass the export type that you want. 
+	*   @param {string} Pass the export type that you want.
 	*   @returns {void}
 	*/
 	export(type: string): void;
@@ -33974,7 +33976,7 @@ export interface XLFormat {
 
 	/** This method is used to create a table for the selected range of cells in the Spreadsheet.
 	*   @param {any} Pass the table object.
-	*   @param {string} Optional.   If the range is specified, then it will create table in the specified range else it will use the current selected range. 
+	*   @param {string} Optional.   If the range is specified, then it will create table in the specified range else it will use the current selected range.
 	*   @returns {void}
 	*/
 	createTable(tableObject: any,range: string): void;
@@ -34008,7 +34010,7 @@ export interface XLFormat {
 
 	/** This method is used to update the format for the selected range of cells in the Spreadsheet.
 	*   @param {any} Pass the format object that you want to update.
-	*   @param {Array<any>} Optional.  If the range is specified, then it will update format in the specified range else it will use the current selected range. 
+	*   @param {Array<any>} Optional.  If the range is specified, then it will update format in the specified range else it will use the current selected range.
 	*   @returns {void}
 	*/
 	updateFormat(formatObj: any,range: Array<any>): void;
@@ -34055,7 +34057,7 @@ export interface XLFreeze {
 export interface XLPivot {
 
 	/** This property is used to clear the pivot table list in Spreadsheet.
-	*   @param {string} Pass the name of the pivot table. 
+	*   @param {string} Pass the name of the pivot table.
 	*   @returns {void}
 	*/
 	clearPivotFieldList(pivotName: string): void;
@@ -34251,7 +34253,7 @@ export interface XLSort {
 export interface XLValidate {
 
 	/** This method is used to apply data validation rules in a selected range of cells based on the defined condition in the Spreadsheet.
-	*   @param {string} If range is specified, it will apply rules for the specified range else it will use the current selected range. 
+	*   @param {string} If range is specified, it will apply rules for the specified range else it will use the current selected range.
 	*   @param {Array<any>} Pass the validation condition, value1 and value2.
 	*   @param {string} Pass the data type.
 	*   @param {boolean} Pass 'true' if you ignore blank values.
@@ -34261,7 +34263,7 @@ export interface XLValidate {
 	applyDVRules(range: string,values: Array<any>,type: string,required: boolean,showErrorAlert: boolean): void;
 
 	/** This method is used to clear the applied validation rules in a specified range of cells in the Spreadsheet.
-	*   @param {string} Optional.  If range is specified, it will clear rules for the specified range else it will use the current selected range. 
+	*   @param {string} Optional.  If range is specified, it will clear rules for the specified range else it will use the current selected range.
 	*   @returns {void}
 	*/
 	clearDV(range: string): void;
@@ -35813,7 +35815,7 @@ export interface SelectionSettings {
 
 export interface SheetsBorder {
 
-	/**  
+	/**
 	*/
 	type?: ej.Spreadsheet.BorderType|string;
 
@@ -36210,8 +36212,8 @@ class PdfViewer extends ej.Widget {
 	static fn: PdfViewer;
 	constructor(element: JQuery, options?: PdfViewer.Model);
 	constructor(element: Element, options?: PdfViewer.Model);
-	model:PdfViewer.Model;
-	defaults:PdfViewer.Model;
+	model: PdfViewer.Model;
+	defaults: PdfViewer.Model;
 
 	/** Loads the document with the filename and displays it in PDF viewer.
 	*   @returns {void}
@@ -36288,7 +36290,7 @@ class PdfViewer extends ej.Widget {
 	*/
 	zoomTo(): void;
 }
-export module PdfViewer{
+export namespace PdfViewer{
 
 export interface Model {
 
@@ -36517,7 +36519,7 @@ enum PdfService{
 
 enum LinkTarget{
 
-	///Opens the hyperlink in the same tab of the browser. 
+	///Opens the hyperlink in the same tab of the browser.
 	Default,
 
 	///Opens the hyperlink in a new tab of the browser.
@@ -36530,16 +36532,16 @@ enum LinkTarget{
 }
 
 }
-declare module ej.datavisualization {
-	
+declare namespace ej.datavisualization {
+
 class SymbolPalette extends ej.Widget {
 	static fn: SymbolPalette;
 	constructor(element: JQuery, options?: SymbolPalette.Model);
 	constructor(element: Element, options?: SymbolPalette.Model);
-	model:SymbolPalette.Model;
-	defaults:SymbolPalette.Model;
+	model: SymbolPalette.Model;
+	defaults: SymbolPalette.Model;
 }
-export module SymbolPalette{
+export namespace SymbolPalette{
 
 export interface Model {
 
@@ -36663,8 +36665,8 @@ class LinearGauge extends ej.Widget {
 	static fn: LinearGauge;
 	constructor(element: JQuery, options?: LinearGauge.Model);
 	constructor(element: Element, options?: LinearGauge.Model);
-	model:LinearGauge.Model;
-	defaults:LinearGauge.Model;
+	model: LinearGauge.Model;
+	defaults: LinearGauge.Model;
 
 	/** destroy the linear gauge all events bound using this._on will be unbind automatically and bring the control to pre-init state.
 	*   @returns {void}
@@ -37081,7 +37083,7 @@ class LinearGauge extends ej.Widget {
 	*/
 	setTickYDistanceFromScale(): void;
 }
-export module LinearGauge{
+export namespace LinearGauge{
 
 export interface Model {
 
@@ -38699,8 +38701,8 @@ class CircularGauge extends ej.Widget {
 	static fn: CircularGauge;
 	constructor(element: JQuery, options?: CircularGauge.Model);
 	constructor(element: Element, options?: CircularGauge.Model);
-	model:CircularGauge.Model;
-	defaults:CircularGauge.Model;
+	model: CircularGauge.Model;
+	defaults: CircularGauge.Model;
 
 	/** destroy the circular gauge widget. all events bound using this._on will be unbind automatically and bring the control to pre-init state.
 	*   @returns {void}
@@ -39122,7 +39124,7 @@ class CircularGauge extends ej.Widget {
 	*/
 	setTickWidth(): void;
 }
-export module CircularGauge{
+export namespace CircularGauge{
 
 export interface Model {
 
@@ -40710,8 +40712,8 @@ class DigitalGauge extends ej.Widget {
 	static fn: DigitalGauge;
 	constructor(element: JQuery, options?: DigitalGauge.Model);
 	constructor(element: Element, options?: DigitalGauge.Model);
-	model:DigitalGauge.Model;
-	defaults:DigitalGauge.Model;
+	model: DigitalGauge.Model;
+	defaults: DigitalGauge.Model;
 
 	/** To destroy the digital gauge
 	*   @returns {void}
@@ -40756,7 +40758,7 @@ class DigitalGauge extends ej.Widget {
 	*/
 	setValue(itemIndex: number, value: string): void;
 }
-export module DigitalGauge{
+export namespace DigitalGauge{
 
 export interface Model {
 
@@ -41129,8 +41131,8 @@ class Chart extends ej.Widget {
 	static fn: Chart;
 	constructor(element: JQuery, options?: Chart.Model);
 	constructor(element: Element, options?: Chart.Model);
-	model:Chart.Model;
-	defaults:Chart.Model;
+	model: Chart.Model;
+	defaults: Chart.Model;
 
 	/** Animates the series and/or indicators in Chart. When parameter is not passed to this method, then all the series and indicators present in Chart are animated.
 	*   @param {any} If an array collection is passed as parameter, series and indicator objects passed in array collection are animated.ExampleIf a series or indicator object is passed to this method, then the specific series or indicator is animated.Example,
@@ -41151,7 +41153,7 @@ class Chart extends ej.Widget {
 	*/
 	redraw(): void;
 }
-export module Chart{
+export namespace Chart{
 
 export interface Model {
 
@@ -41604,11 +41606,11 @@ export interface DisplayTextRenderingEventArgs {
 	*/
 	locationY?: number;
 
-	/** Index of the series in series Collection whose data label is being rendered 
+	/** Index of the series in series Collection whose data label is being rendered
 	*/
 	seriesIndex?: number;
 
-	/** Index of the point in series whose data label is being rendered 
+	/** Index of the point in series whose data label is being rendered
 	*/
 	pointIndex?: number;
 
@@ -41909,7 +41911,7 @@ export interface SeriesRenderingEventArgs {
 
 export interface SymbolRenderingEventArgs {
 
-	/** Set this option to true to cancel the event    
+	/** Set this option to true to cancel the event
 	*/
 	cancel?: boolean;
 
@@ -41932,7 +41934,7 @@ export interface SymbolRenderingEventArgs {
 
 export interface TitleRenderingEventArgs {
 
-	/** Set this option to true to cancel the event    
+	/** Set this option to true to cancel the event
 	*/
 	cancel?: boolean;
 
@@ -41959,7 +41961,7 @@ export interface TitleRenderingEventArgs {
 
 export interface ToolTipInitializeEventArgs {
 
-	/** Set this option to true to cancel the event    
+	/** Set this option to true to cancel the event
 	*/
 	cancel?: boolean;
 
@@ -41986,7 +41988,7 @@ export interface ToolTipInitializeEventArgs {
 
 export interface TrackAxisToolTipEventArgs {
 
-	/** Set this option to true to cancel the event    
+	/** Set this option to true to cancel the event
 	*/
 	cancel?: boolean;
 
@@ -42017,7 +42019,7 @@ export interface TrackAxisToolTipEventArgs {
 
 export interface TrackToolTipEventArgs {
 
-	/** Set this option to true to cancel the event    
+	/** Set this option to true to cancel the event
 	*/
 	cancel?: boolean;
 
@@ -42052,7 +42054,7 @@ export interface TrackToolTipEventArgs {
 
 export interface AxisLabelClickEventArgs {
 
-	/** Set this option to true to cancel the event    
+	/** Set this option to true to cancel the event
 	*/
 	cancel?: boolean;
 
@@ -42064,7 +42066,7 @@ export interface AxisLabelClickEventArgs {
 	*/
 	type?: string;
 
-	/** X and Y co-ordinate of the labels in chart area. 
+	/** X and Y co-ordinate of the labels in chart area.
 	*/
 	location?: any;
 
@@ -42083,7 +42085,7 @@ export interface AxisLabelClickEventArgs {
 
 export interface AxisLabelMouseMoveEventArgs {
 
-	/** Set this option to true to cancel the event    
+	/** Set this option to true to cancel the event
 	*/
 	cancel?: boolean;
 
@@ -42095,7 +42097,7 @@ export interface AxisLabelMouseMoveEventArgs {
 	*/
 	type?: string;
 
-	/** X and Y co-ordinate of the labels in chart area. 
+	/** X and Y co-ordinate of the labels in chart area.
 	*/
 	location?: any;
 
@@ -42114,7 +42116,7 @@ export interface AxisLabelMouseMoveEventArgs {
 
 export interface ChartClickEventArgs {
 
-	/** Set this option to true to cancel the event    
+	/** Set this option to true to cancel the event
 	*/
 	cancel?: boolean;
 
@@ -42126,30 +42128,30 @@ export interface ChartClickEventArgs {
 	*/
 	type?: string;
 
-	/** X and Y co-ordinate of the points with respect to chart area.  
+	/** X and Y co-ordinate of the points with respect to chart area.
 	*/
 	location?: any;
 
-	/** ID of the target element. 
+	/** ID of the target element.
 	*/
 	id?: string;
 
-	/** Width and height of the chart. 
+	/** Width and height of the chart.
 	*/
 	size?: any;
 
-	/** x-coordinate of the pointer, relative to the page 
+	/** x-coordinate of the pointer, relative to the page
 	*/
 	pageX?: number;
 
-	/** y-coordinate of the pointer, relative to the page 
+	/** y-coordinate of the pointer, relative to the page
 	*/
 	pageY?: number;
 }
 
 export interface ChartMouseMoveEventArgs {
 
-	/** Set this option to true to cancel the event    
+	/** Set this option to true to cancel the event
 	*/
 	cancel?: boolean;
 
@@ -42161,30 +42163,30 @@ export interface ChartMouseMoveEventArgs {
 	*/
 	type?: string;
 
-	/** X and Y co-ordinate of the points with respect to chart area.  
+	/** X and Y co-ordinate of the points with respect to chart area.
 	*/
 	location?: any;
 
-	/** ID of the target element. 
+	/** ID of the target element.
 	*/
 	id?: string;
 
-	/** Width and height of the chart. 
+	/** Width and height of the chart.
 	*/
 	size?: any;
 
-	/** x-coordinate of the pointer, relative to the page 
+	/** x-coordinate of the pointer, relative to the page
 	*/
 	pageX?: number;
 
-	/** y-coordinate of the pointer, relative to the page 
+	/** y-coordinate of the pointer, relative to the page
 	*/
 	pageY?: number;
 }
 
 export interface ChartDoubleClickEventArgs {
 
-	/** Set this option to true to cancel the event    
+	/** Set this option to true to cancel the event
 	*/
 	cancel?: boolean;
 
@@ -42196,30 +42198,30 @@ export interface ChartDoubleClickEventArgs {
 	*/
 	type?: string;
 
-	/** X and Y co-ordinate of the points with respect to chart area.  
+	/** X and Y co-ordinate of the points with respect to chart area.
 	*/
 	location?: any;
 
-	/** ID of the target element. 
+	/** ID of the target element.
 	*/
 	id?: string;
 
-	/** Width and height of the chart. 
+	/** Width and height of the chart.
 	*/
 	size?: any;
 
-	/** x-coordinate of the pointer, relative to the page 
+	/** x-coordinate of the pointer, relative to the page
 	*/
 	pageX?: number;
 
-	/** y-coordinate of the pointer, relative to the page 
+	/** y-coordinate of the pointer, relative to the page
 	*/
 	pageY?: number;
 }
 
 export interface AnnotationClickEventArgs {
 
-	/** Set this option to true to cancel the event    
+	/** Set this option to true to cancel the event
 	*/
 	cancel?: boolean;
 
@@ -42231,26 +42233,26 @@ export interface AnnotationClickEventArgs {
 	*/
 	type?: string;
 
-	/** X and Y co-ordinate of the annotation in chart area.  
+	/** X and Y co-ordinate of the annotation in chart area.
 	*/
 	location?: any;
 
-	/** Information about the annotation, like Coordinate unit, Region, content 
+	/** Information about the annotation, like Coordinate unit, Region, content
 	*/
 	contentData?: any;
 
-	/** x-coordinate of the pointer, relative to the page  
+	/** x-coordinate of the pointer, relative to the page
 	*/
 	pageX?: number;
 
-	/** y-coordinate of the pointer, relative to the page 
+	/** y-coordinate of the pointer, relative to the page
 	*/
 	pageY?: number;
 }
 
 export interface AfterResizeEventArgs {
 
-	/** Set this option to true to cancel the event    
+	/** Set this option to true to cancel the event
 	*/
 	cancel?: boolean;
 
@@ -42262,34 +42264,34 @@ export interface AfterResizeEventArgs {
 	*/
 	type?: string;
 
-	/** Chart width, after resize  
+	/** Chart width, after resize
 	*/
 	width?: number;
 
-	/** Chart height, after resize  
+	/** Chart height, after resize
 	*/
 	height?: number;
 
-	/** Chart width, before resize  
+	/** Chart width, before resize
 	*/
 	prevWidth?: number;
 
-	/** Chart height, before resize  
+	/** Chart height, before resize
 	*/
 	prevHeight?: number;
 
-	/** Chart width, when the chart was first rendered  
+	/** Chart width, when the chart was first rendered
 	*/
 	originalWidth?: number;
 
-	/** Chart height, when the chart was first rendered  
+	/** Chart height, when the chart was first rendered
 	*/
 	originalHeight?: number;
 }
 
 export interface BeforeResizeEventArgs {
 
-	/** Set this option to true to cancel the event    
+	/** Set this option to true to cancel the event
 	*/
 	cancel?: boolean;
 
@@ -42301,26 +42303,26 @@ export interface BeforeResizeEventArgs {
 	*/
 	type?: string;
 
-	/** Chart width, before resize  
+	/** Chart width, before resize
 	*/
 	currentWidth?: number;
 
-	/** Chart height, before resize  
+	/** Chart height, before resize
 	*/
 	currentHeight?: number;
 
-	/** Chart width, after resize   
+	/** Chart width, after resize
 	*/
 	newWidth?: number;
 
-	/** Chart height, after resize   
+	/** Chart height, after resize
 	*/
 	newHeight?: number;
 }
 
 export interface ErrorBarRenderingEventArgs {
 
-	/** Set this option to true to cancel the event    
+	/** Set this option to true to cancel the event
 	*/
 	cancel?: boolean;
 
@@ -42332,7 +42334,7 @@ export interface ErrorBarRenderingEventArgs {
 	*/
 	type?: string;
 
-	/** Error bar Object  
+	/** Error bar Object
 	*/
 	errorbar?: any;
 }
@@ -47155,15 +47157,15 @@ class RangeNavigator extends ej.Widget {
 	static fn: RangeNavigator;
 	constructor(element: JQuery, options?: RangeNavigator.Model);
 	constructor(element: Element, options?: RangeNavigator.Model);
-	model:RangeNavigator.Model;
-	defaults:RangeNavigator.Model;
+	model: RangeNavigator.Model;
+	defaults: RangeNavigator.Model;
 
 	/** destroy the range navigator widget
 	*   @returns {void}
 	*/
 	_destroy(): void;
 }
-export module RangeNavigator{
+export namespace RangeNavigator{
 
 export interface Model {
 
@@ -48269,8 +48271,8 @@ class BulletGraph extends ej.Widget {
 	static fn: BulletGraph;
 	constructor(element: JQuery, options?: BulletGraph.Model);
 	constructor(element: Element, options?: BulletGraph.Model);
-	model:BulletGraph.Model;
-	defaults:BulletGraph.Model;
+	model: BulletGraph.Model;
+	defaults: BulletGraph.Model;
 
 	/** To destroy the bullet graph
 	*   @returns {void}
@@ -48292,7 +48294,7 @@ class BulletGraph extends ej.Widget {
 	*/
 	setFeatureMeasureBarValue(): void;
 }
-export module BulletGraph{
+export namespace BulletGraph{
 
 export interface Model {
 
@@ -49308,8 +49310,8 @@ class Barcode extends ej.Widget {
 	static fn: Barcode;
 	constructor(element: JQuery, options?: Barcode.Model);
 	constructor(element: Element, options?: Barcode.Model);
-	model:Barcode.Model;
-	defaults:Barcode.Model;
+	model: Barcode.Model;
+	defaults: Barcode.Model;
 
 	/** To disable the barcode
 	*   @returns {void}
@@ -49321,7 +49323,7 @@ class Barcode extends ej.Widget {
 	*/
 	enable(): void;
 }
-export module Barcode{
+export namespace Barcode{
 
 export interface Model {
 
@@ -49462,8 +49464,8 @@ class Map extends ej.Widget {
 	static fn: Map;
 	constructor(element: JQuery, options?: Map.Model);
 	constructor(element: Element, options?: Map.Model);
-	model:Map.Model;
-	defaults:Map.Model;
+	model: Map.Model;
+	defaults: Map.Model;
 
 	/** Method for navigating to specific shape based on latitude, longitude and zoom level.
 	*   @param {number} Pass the latitude value for map
@@ -49502,7 +49504,7 @@ class Map extends ej.Widget {
 	*/
 	zoom(level: number, isAnimate: boolean): void;
 }
-export module Map{
+export namespace Map{
 
 export interface Model {
 
@@ -49678,7 +49680,7 @@ export interface ZoomSettings {
 export interface NavigationControl {
 
 	/** Set the absolutePosition for navigation control
-	*   @Default {{x:0,y:0}}
+	*   @Default {{x: 0,y: 0}}
 	*/
 	absolutePosition?: any;
 
@@ -50245,15 +50247,15 @@ class TreeMap extends ej.Widget {
 	static fn: TreeMap;
 	constructor(element: JQuery, options?: TreeMap.Model);
 	constructor(element: Element, options?: TreeMap.Model);
-	model:TreeMap.Model;
-	defaults:TreeMap.Model;
+	model: TreeMap.Model;
+	defaults: TreeMap.Model;
 
 	/** Method to reload treemap with updated values.
 	*   @returns {void}
 	*/
 	refresh(): void;
 }
-export module TreeMap{
+export namespace TreeMap{
 
 export interface Model {
 
@@ -50776,8 +50778,8 @@ class Diagram extends ej.Widget {
 	static fn: Diagram;
 	constructor(element: JQuery, options?: Diagram.Model);
 	constructor(element: Element, options?: Diagram.Model);
-	model:Diagram.Model;
-	defaults:Diagram.Model;
+	model: Diagram.Model;
+	defaults: Diagram.Model;
 
 	/** Add nodes and connectors to diagram at runtime
 	*   @param {any} a JSON to define a node/connector or an array of nodes and connector
@@ -51085,7 +51087,7 @@ class Diagram extends ej.Widget {
 	*/
 	zoomTo(zoom: any): void;
 }
-export module Diagram{
+export namespace Diagram{
 
 export interface Options {
 
@@ -52334,7 +52336,7 @@ export interface Connector {
 	parent?: string;
 
 	/** An array of JSON objects where each object represents a segment
-	*   @Default {[ { type:straight } ]}
+	*   @Default {[ { type: straight } ]}
 	*/
 	segments?: Array<ConnectorsSegment>;
 
@@ -52344,7 +52346,7 @@ export interface Connector {
 	shape?: ConnectorsShape;
 
 	/** Defines the source decorator of the connector
-	*   @Default {{ shape:arrow, width: 8, height:8, borderColor:black, fillColor:black }}
+	*   @Default {{ shape: arrow, width: 8, height: 8, borderColor: black, fillColor: black }}
 	*/
 	sourceDecorator?: ConnectorsSourceDecorator;
 
@@ -52367,7 +52369,7 @@ export interface Connector {
 	sourcePort?: string;
 
 	/** Defines the target decorator of the connector
-	*   @Default {{ shape:arrow, width: 8, height:8, borderColor:black, fillColor:black }}
+	*   @Default {{ shape: arrow, width: 8, height: 8, borderColor: black, fillColor: black }}
 	*/
 	targetDecorator?: ConnectorsTargetDecorator;
 
@@ -53633,7 +53635,7 @@ export interface ScrollSettings {
 	horizontalOffset?: number;
 
 	/** Allows to extend the scrollable region that is based on the scroll limit
-	*   @Default {{left: 0, right: 0, top:0, bottom: 0}}
+	*   @Default {{left: 0, right: 0, top: 0, bottom: 0}}
 	*/
 	padding?: any;
 
@@ -53862,11 +53864,11 @@ export interface Tooltip {
 }
 module Diagram
 {
-enum ImageAlignment 
+enum ImageAlignment
 {
 //Scales the graphic content non-uniformly to the width and height of the diagram area
 None,
-//Used to align the image at the top left of diagram area 
+//Used to align the image at the top left of diagram area
 XMinYMin,
 //Used to align the image at the left center of diagram area
 XMinYMid,
@@ -53888,7 +53890,7 @@ XMaxYMax,
 }
 module Diagram
 {
-enum ScaleConstraints 
+enum ScaleConstraints
 {
 //Used to scale the image non-uniformly to the given width/height
 None,
@@ -54114,7 +54116,7 @@ enum BPMNFlows
 {
 //Used to specify the Sequence flow in a BPMN Process
 Sequence,
-//Used to specify the Association flow in a BPMN Process 
+//Used to specify the Association flow in a BPMN Process
 Association,
 //Used to specify the Message flow in a BPMN Process
 Message,
@@ -54672,7 +54674,7 @@ All,
 }
 module Diagram
 {
-enum UserHandlePositions 
+enum UserHandlePositions
 {
 //Set the position of the userhandle as topleft
 TopLeft,
@@ -54747,10 +54749,10 @@ class HeatMap extends ej.Widget {
 	static fn: HeatMap;
 	constructor(element: JQuery, options?: HeatMap.Model);
 	constructor(element: Element, options?: HeatMap.Model);
-	model:HeatMap.Model;
-	defaults:HeatMap.Model;
+	model: HeatMap.Model;
+	defaults: HeatMap.Model;
 }
-export module HeatMap{
+export namespace HeatMap{
 
 export interface Model {
 
@@ -55073,17 +55075,17 @@ module HeatMap
 {
 enum CellVisibility
 {
-//Display the content of the cell              
+//Display the content of the cell
 Visible,
-//Hide the content of the cell  
+//Hide the content of the cell
 Hidden,
 }
 }
 module HeatMap
 {
-enum TextDecoration 
+enum TextDecoration
 {
-//Defines a line below the text            
+//Defines a line below the text
 Underline,
 //Defines a line above the text
 Overline,
@@ -55098,10 +55100,10 @@ class HeatMapLegend extends ej.Widget {
 	static fn: HeatMapLegend;
 	constructor(element: JQuery, options?: HeatMapLegend.Model);
 	constructor(element: Element, options?: HeatMapLegend.Model);
-	model:HeatMapLegend.Model;
-	defaults:HeatMapLegend.Model;
+	model: HeatMapLegend.Model;
+	defaults: HeatMapLegend.Model;
 }
-export module HeatMapLegend{
+export namespace HeatMapLegend{
 
 export interface Model {
 
@@ -55200,9 +55202,9 @@ module HeatMap
 {
 enum LegendOrientation
 {
-//Scales the graphic content non-uniformly to the width and height of the diagram area            
+//Scales the graphic content non-uniformly to the width and height of the diagram area
 Horizontal,
-//Used to align the image at the top left of diagram area 
+//Used to align the image at the top left of diagram area
 Vertical,
 }
 }
@@ -55210,9 +55212,9 @@ module HeatMap
 {
 enum LegendMode
 {
-//Scales the graphic content non-uniformly to the width and height of the diagram area            
+//Scales the graphic content non-uniformly to the width and height of the diagram area
 Gradient,
-//Used to align the image at the top left of diagram area 
+//Used to align the image at the top left of diagram area
 List,
 }
 }
@@ -55221,15 +55223,15 @@ class Sparkline extends ej.Widget {
 	static fn: Sparkline;
 	constructor(element: JQuery, options?: Sparkline.Model);
 	constructor(element: Element, options?: Sparkline.Model);
-	model:Sparkline.Model;
-	defaults:Sparkline.Model;
+	model: Sparkline.Model;
+	defaults: Sparkline.Model;
 
 	/** Redraws the entire sparkline. You can call this method whenever you update, add or remove points from the data source or whenever you want to refresh the UI.
 	*   @returns {void}
 	*/
 	redraw(): void;
 }
-export module Sparkline{
+export namespace Sparkline{
 
 export interface Model {
 
@@ -55408,7 +55410,7 @@ export interface LoadedEventArgs {
 
 export interface TooltipInitializeEventArgs {
 
-	/** Set this option to true to cancel the event    
+	/** Set this option to true to cancel the event
 	*/
 	cancel?: boolean;
 
@@ -55532,7 +55534,7 @@ export interface PointRegionMouseClickEventArgs {
 
 export interface SparklineMouseMoveEventArgs {
 
-	/** Set this option to true to cancel the event    
+	/** Set this option to true to cancel the event
 	*/
 	cancel?: boolean;
 
@@ -55547,7 +55549,7 @@ export interface SparklineMouseMoveEventArgs {
 
 export interface SparklineMouseLeaveEventArgs {
 
-	/** Set this option to true to cancel the event    
+	/** Set this option to true to cancel the event
 	*/
 	cancel?: boolean;
 
@@ -55817,10 +55819,10 @@ class Overview extends ej.Widget {
 	static fn: Overview;
 	constructor(element: JQuery, options?: Overview.Model);
 	constructor(element: Element, options?: Overview.Model);
-	model:Overview.Model;
-	defaults:Overview.Model;
+	model: Overview.Model;
+	defaults: Overview.Model;
 }
-export module Overview{
+export namespace Overview{
 
 export interface Model {
 

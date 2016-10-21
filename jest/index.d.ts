@@ -82,7 +82,7 @@ declare namespace jest {
     }
 
     interface DoneCallback {
-        (...args: any[]): any
+        (...args: any[]): any;
         fail(error?: string | { message: string }): any;
     }
 
@@ -101,7 +101,7 @@ declare namespace jest {
     }
 
     interface Describe {
-        (name: string, fn: EmptyFunction): void
+        (name: string, fn: EmptyFunction): void;
         only: Describe;
         skip: Describe;
     }
@@ -117,7 +117,7 @@ declare namespace jest {
         toBeFalsy(): void;
         toBeGreaterThan(expected: number): void;
         toBeGreaterThanOrEqual(expected: number): void;
-        toBeInstanceOf(expected: any): void
+        toBeInstanceOf(expected: any): void;
         toBeLessThan(expected: number): void;
         toBeLessThanOrEqual(expected: number): void;
         toBeNull(): void;
@@ -135,7 +135,7 @@ declare namespace jest {
     }
 
     interface Constructable {
-        new (...args: any[]): any
+        new (...args: any[]): any;
     }
 
     interface Mock<T> extends Function {

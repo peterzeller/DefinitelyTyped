@@ -10,7 +10,7 @@ declare module "bases" {
 
     export function toBase(num: number, base: number): string;
 
-    export function fromBase(str: string, base:number): number;
+    export function fromBase(str: string, base: number): number;
 
     export let KNOWN_ALPHABETS: any;
 

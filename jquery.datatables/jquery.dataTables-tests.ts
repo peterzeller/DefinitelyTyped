@@ -532,7 +532,7 @@ $(document).ready(function () {
                 .search($(this).val())
                 .draw();
         });
- 
+
         // Get the search data for the first column and add to the select list
         dt
             .column(colIdx)
@@ -616,7 +616,7 @@ $(document).ready(function () {
             .search($(this).val())
             .draw();
     });
- 
+
     // Get the search data for the first column and add to the select list
     dt
         .column(0)
@@ -700,7 +700,7 @@ $(document).ready(function () {
                 .search($(this).val())
                 .draw();
         });
- 
+
         // Get the search data for the first column and add to the select list
         dt
             .column(colIdx)

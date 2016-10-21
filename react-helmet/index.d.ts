@@ -8,9 +8,9 @@
 import * as React from "react";
 
 declare var Helmet: {
-    (): ReactHelmet.HelmetComponent
+    (): ReactHelmet.HelmetComponent,
     rewind(): ReactHelmet.HelmetData
-    }
+};
 
 export = Helmet;
 

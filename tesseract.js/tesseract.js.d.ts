@@ -5,7 +5,7 @@
 
 /// <reference path="../node/node.d.ts" />
 
-declare module Tesseract {
+declare namespace Tesseract {
     type ImageLike = string | HTMLImageElement | HTMLCanvasElement | HTMLVideoElement
         | CanvasRenderingContext2D | File | Blob | ImageData | Buffer;
     interface Progress {
@@ -142,7 +142,7 @@ declare module Tesseract {
 }
 
 declare module "tesseract.js" {
-    var Tesseract: Tesseract.TesseractStatic
+    var Tesseract: Tesseract.TesseractStatic;
     export = Tesseract;
 }
 

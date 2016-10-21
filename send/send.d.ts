@@ -105,31 +105,31 @@ declare module "send" {
              * Enable or disable "hidden" (dot) files.
              */
             hidden(val: boolean): SendStream;
-            
+
             /**
              * @deprecated pass index as option
              * Set index `paths`, set to a falsy value to disable index support.
              */
             index(paths: string[] | string): SendStream;
-            
+
             /**
              * @deprecated pass root as option
              * Set root `path`.
              */
             root(paths: string): SendStream;
-            
+
             /**
              * @deprecated pass root as option
              * Set root `path`.
              */
             from(paths: string): SendStream;
-            
+
             /**
              * @deprecated pass maxAge as option
              * Set max-age to `maxAge`.
              */
             maxage(maxAge: string | number): SendStream;
-            
+
             /**
              * Emit error with `status`.
              * @private

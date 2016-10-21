@@ -6,27 +6,27 @@
 declare namespace QuillJS {
 
     export interface QuillOptionsStatic {
-        debug?: string,
-        modules?: { [key: string]: any },
-        placeholder?: string,
-        readOnly?: boolean,
-        theme?: string,
-        formats?: string[] 
+        debug?: string;
+        modules?: { [key: string]: any };
+        placeholder?: string;
+        readOnly?: boolean;
+        theme?: string;
+        formats?: string[];
     }
 
     export interface BoundsStatic {
-        left: number,
-        top: number,
-        height: number,
-        width: number
+        left: number;
+        top: number;
+        height: number;
+        width: number;
     }
 
     export interface DeltaStatic {
         ops?: Array<any>;
-        retain?: any,
-        delete?: any,
-        insert?: any,
-        attributes?: any
+        retain?: any;
+        delete?: any;
+        insert?: any;
+        attributes?: any;
     }
 
     export interface RangeStatic {
@@ -50,8 +50,8 @@ declare namespace QuillJS {
         insertText(index: number, text: string, source?: sourceType): void;
         insertText(index: number, text: string, format: string, value: string, source?: sourceType): void;
         insertText(index: number, text: string, formats: formatsType, source?: sourceType): void;
-        pasteHTML(index: number, html: string, source?:sourceType): string;
-        pasteHTML(html:string, source?: sourceType): string;
+        pasteHTML(index: number, html: string, source?: sourceType): string;
+        pasteHTML(html: string, source?: sourceType): string;
         setContents(delta: DeltaStatic, source?: sourceType): void;
         setText(text: string, source?: sourceType): void;
         update(source?: string): void;
@@ -86,7 +86,7 @@ declare namespace QuillJS {
         register(path: string, def: any, suppressWarning?: boolean): void;
         register(defs: formatsType, suppressWarning?: boolean): void;
         addContainer(className: string, refNode?: any): any;
-        getModule(name: string): any
+        getModule(name: string): any;
     }
 }
 

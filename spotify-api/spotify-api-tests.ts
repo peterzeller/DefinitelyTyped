@@ -1,11 +1,11 @@
 /*
  * This test file contains the sample output from The Spotify Web Api obtained from [The Web API Console](https://developer.spotify.com/web-api/console/)
  * The standard suggested values for input were used.
- * 
+ *
  * Updated for the March 29th, 2016 changes to the Spotify Web Api.
- * 
+ *
  * Combined with the typings it should compile without errors.
- * 
+ *
  * The order of tests is the same as on [The Spotify Web Api](https://developer.spotify.com/web-api/endpoint-reference/)
  * To find tests, search for "* Tests" instead of scrolling to keep sane.
  */
@@ -3689,7 +3689,7 @@ const getArtistRelatedArtists : SpotifyApi.ArtistsRelatedArtistsResponse = {
 /**
  * Tests https://developer.spotify.com/get-audio-features/
  */
-const singleAudioFeaturesResponse : SpotifyApi.AudioFeaturesResponse = { 
+const singleAudioFeaturesResponse : SpotifyApi.AudioFeaturesResponse = {
   "danceability": 0.281,
   "energy": 0.402,
   "key": 4,
@@ -3707,7 +3707,7 @@ const singleAudioFeaturesResponse : SpotifyApi.AudioFeaturesResponse = {
   "track_href": "https://api.spotify.com/v1/tracks/24JygzOLM0EmRQeGtFcIcG",
   "analysis_url": "http://echonest-analysis.s3.amazonaws.com/TR/ehbkMg05Ck-FN7p3lV7vd8TUdBCvM6z5mgDiZRv6iSlw8P_b8GYBZ4PRAlOgTl3e5rS34_l3dZGDeYzH4=/3/full.json?AWSAccessKeyId=AKIAJRDFEY23UEVW42BQ&Expires=1458063189&Signature=bnTm0Hcb%2Bxo8ZCmuxm1mY0JY4Hs%3D",
   "duration_ms": 497493,
-  "time_signature": 3 
+  "time_signature": 3
 };
 
 
@@ -3717,7 +3717,7 @@ const singleAudioFeaturesResponse : SpotifyApi.AudioFeaturesResponse = {
 /**
  * Tests https://developer.spotify.com/web-api/get-several-audio-features/
  */
-const severalAudioFeaturesResponse : SpotifyApi.MultipleAudioFeaturesResponse = { audio_features: 
+const severalAudioFeaturesResponse : SpotifyApi.MultipleAudioFeaturesResponse = { audio_features:
    [ { "danceability": 0.808,
        "energy": 0.626,
        "key": 7,
@@ -3735,7 +3735,7 @@ const severalAudioFeaturesResponse : SpotifyApi.MultipleAudioFeaturesResponse = 
        "track_href": "https://api.spotify.com/v1/tracks/4JpKVNYnVcJ8tuMKjAj50A",
        "analysis_url": "http://echonest-analysis.s3.amazonaws.com/TR/WhpYUARk1kNJ_qP0AdKGcDDFKOQTTgsOoINrqyPQjkUnbteuuBiyj_u94iFCSGzdxGiwqQ6d77f4QLL_8=/3/full.json?AWSAccessKeyId=AKIAJRDFEY23UEVW42BQ&Expires=1458063189&Signature=JRE8SDZStpNOdUsPN/PoS49FMtQ%3D",
        "duration_ms": 535223,
-       "time_signature": 4 
+       "time_signature": 4
      },
      { "danceability": 0.457,
        "energy": 0.815,
@@ -3754,7 +3754,7 @@ const severalAudioFeaturesResponse : SpotifyApi.MultipleAudioFeaturesResponse = 
        "track_href": "https://api.spotify.com/v1/tracks/2NRANZE9UCmPAS5XVbXL40",
        "analysis_url": "http://echonest-analysis.s3.amazonaws.com/TR/WhuQhwPDhmEg5TO4JjbJu0my-awIhk3eaXkRd1ofoJ7tXogPnMtbxkTyLOeHXu5Jke0FCIt52saKJyfPM=/3/full.json?AWSAccessKeyId=AKIAJRDFEY23UEVW42BQ&Expires=1458063189&Signature=qfclum7FwTaR/7aQbnBNO0daCsM%3D",
        "duration_ms": 187800,
-       "time_signature": 4 
+       "time_signature": 4
      },
      { "danceability": 0.281,
        "energy": 0.402,
@@ -3773,8 +3773,8 @@ const severalAudioFeaturesResponse : SpotifyApi.MultipleAudioFeaturesResponse = 
        "track_href": "https://api.spotify.com/v1/tracks/24JygzOLM0EmRQeGtFcIcG",
        "analysis_url": "http://echonest-analysis.s3.amazonaws.com/TR/ehbkMg05Ck-FN7p3lV7vd8TUdBCvM6z5mgDiZRv6iSlw8P_b8GYBZ4PRAlOgTl3e5rS34_l3dZGDeYzH4=/3/full.json?AWSAccessKeyId=AKIAJRDFEY23UEVW42BQ&Expires=1458063189&Signature=bnTm0Hcb%2Bxo8ZCmuxm1mY0JY4Hs%3D",
        "duration_ms": 497493,
-       "time_signature": 3 
-     } ] 
+       "time_signature": 3
+     } ]
 };
 
 
@@ -5144,7 +5144,7 @@ const checkUsersSavedAlbums : SpotifyApi.CheckUserSavedAlbumsResponse = [ true, 
  * Tests https://developer.spotify.com/web-api/get-users-top-artists-and-tracks/
  */
 const usersTopArtists : SpotifyApi.UsersTopArtistsResponse = {
-    "items" : [ 
+    "items" : [
       {
       "external_urls" : {
         "spotify" : "https://open.spotify.com/artist/3qqhR4mOQZP2t2I6QmU8lE"
@@ -5173,7 +5173,7 @@ const usersTopArtists : SpotifyApi.UsersTopArtistsResponse = {
       "popularity" : 43,
       "type" : "artist",
       "uri" : "spotify:artist:3qqhR4mOQZP2t2I6QmU8lE"
-    }, 
+    },
     {
       "external_urls" : {
         "spotify" : "https://open.spotify.com/artist/5CuU6SRJjbbZL926nSGGxX"
@@ -5223,7 +5223,7 @@ const usersTopArtists : SpotifyApi.UsersTopArtistsResponse = {
  * Tests https://developer.spotify.com/web-api/get-users-top-artists-and-tracks/
  */
 const usersTopTracks : SpotifyApi.UsersTopTracksResponse = {
-    "items" : [ 
+    "items" : [
       {
         "album" : {
           "album_type" : "SINGLE",
@@ -5362,7 +5362,7 @@ const usersTopTracks : SpotifyApi.UsersTopTracksResponse = {
 
 
 /**
- * Tests 
+ * Tests
  */
 const recommendationsBasedOnSeeds: SpotifyApi.RecommendationsFromSeedsResponse = {
   "tracks": [
@@ -6339,7 +6339,7 @@ const playlist : SpotifyApi.SinglePlaylistResponse = {
 
 
 /**
- * Tests 
+ * Tests
  */
 const playlistTracks : SpotifyApi.PlaylistTrackResponse = {
   "href" : "https://api.spotify.com/v1/users/spotify_espa%C3%B1a/playlists/21THa8j9TaSGuXYNBU5tsC/tracks?offset=0&limit=3",

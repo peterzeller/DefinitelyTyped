@@ -138,7 +138,7 @@ declare namespace protractor {
          * @template TYPE, SELF
          */
         function filter<T>(arr: T[], fn: (element: T, index: number, array: T[]) => any, opt_self?: any): webdriver.promise.Promise<T[]>;
-        function filter<T>(arr: webdriver.promise.Promise<T[]>, fn: (element: T, index: number, array: T[]) => any, opt_self?: any): webdriver.promise.Promise<T[]>
+        function filter<T>(arr: webdriver.promise.Promise<T[]>, fn: (element: T, index: number, array: T[]) => any, opt_self?: any): webdriver.promise.Promise<T[]>;
 
         /**
          * Creates a new deferred object.
@@ -175,8 +175,8 @@ declare namespace protractor {
          *     {@code fn}.
          * @template TYPE, SELF
          */
-        function map<T>(arr: T[], fn: (element: T, index: number, array: T[]) => any, opt_self?: any): webdriver.promise.Promise<T[]>
-        function map<T>(arr: webdriver.promise.Promise<T[]>, fn: (element: T, index: number, array: T[]) => any, opt_self?: any): webdriver.promise.Promise<T[]>
+        function map<T>(arr: T[], fn: (element: T, index: number, array: T[]) => any, opt_self?: any): webdriver.promise.Promise<T[]>;
+        function map<T>(arr: webdriver.promise.Promise<T[]>, fn: (element: T, index: number, array: T[]) => any, opt_self?: any): webdriver.promise.Promise<T[]>;
 
         /**
          * Creates a promise that has been rejected with the given reason.
@@ -1349,7 +1349,7 @@ declare namespace protractor {
          *     WebDriver wire protocol.
          * @see http://code.google.com/p/selenium/wiki/JsonWireProtocol
          */
-        getId(): webdriver.promise.Promise<webdriver.IWebElementId[]>
+        getId(): webdriver.promise.Promise<webdriver.IWebElementId[]>;
 
         /**
          * Schedules a command to retrieve the inner HTML of this element.

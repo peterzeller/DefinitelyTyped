@@ -13,7 +13,7 @@ declare module "ejson" {
   interface CloneOptions {
     keyOrderSensitive: boolean;
   }
-  
+
   function clone<T>(obj: T): T;
   function parse(str: string): any;
   function stringify(obj: any, options?: StringifyOptions): string;

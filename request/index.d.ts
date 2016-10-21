@@ -141,7 +141,7 @@ declare namespace request {
         postData?: {
             mimeType?: string;
             params?: NameValuePair[];
-        }
+        };
     }
 
     export interface NameValuePair {
@@ -236,9 +236,9 @@ declare namespace request {
     }
 
     export interface CookieJar {
-        setCookie(cookie: Cookie, uri: string | url.Url, options?: any): void
-        getCookieString(uri: string | url.Url): string
-        getCookies(uri: string | url.Url): Cookie[]
+        setCookie(cookie: Cookie, uri: string | url.Url, options?: any): void;
+        getCookieString(uri: string | url.Url): string;
+        getCookies(uri: string | url.Url): Cookie[];
     }
 
     export interface CookieValue {

@@ -25,7 +25,7 @@ declare module "gulp-cache" {
              * The name of the bucket which stores the cached objects.
              * Default value = 'default'
              */
-            name?: string,
+            name?: string;
 
             /**
              * The hash generator to use.

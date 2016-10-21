@@ -10,13 +10,13 @@ type Color = 'black' | 'red' | 'green' | 'yellow' | 'blue' | 'magenta' | 'cyan' 
 type Text = string;
 interface Options {
     text?: Text;
-        spinner?: string | Spinner;
+    spinner?: string | Spinner;
     color?: Color;
-        interval?: number;
-        stream?: NodeJS.WritableStream;
-        enabled?: boolean;
-    }
-    interface Spinner {
+    interval?: number;
+    stream?: NodeJS.WritableStream;
+    enabled?: boolean;
+}
+interface Spinner {
         interval?: number;
         frames: string[];
 }

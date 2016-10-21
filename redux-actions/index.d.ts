@@ -9,17 +9,17 @@ declare namespace ReduxActions {
     // FSA-compliant action.
     // See: https://github.com/acdlite/flux-standard-action
     interface BaseAction {
-        type: string
+        type: string;
     }
 
     interface Action<Payload> extends BaseAction {
-        payload?: Payload
-        error?: boolean
-        meta?: any
+        payload?: Payload;
+        error?: boolean;
+        meta?: any;
     }
 
     interface ActionMeta<Payload, Meta> extends Action<Payload> {
-        meta: Meta
+        meta: Meta;
     }
 
     type PayloadCreator<Input, Payload> = (...args: Input[]) => Payload;

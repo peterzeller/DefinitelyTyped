@@ -94,12 +94,12 @@ declare namespace DataTables {
         /**
         * Row Methode / Object
         */
-        row: RowMethodsModel
+        row: RowMethodsModel;
 
         /**
         * Rows Methods / Object
         */
-        rows: RowsMethodsModel
+        rows: RowsMethodsModel;
 
         //#endregion "Row/Rows"
 
@@ -1264,7 +1264,7 @@ declare namespace DataTables {
         /**
         * Retrieve an existing DataTables instance. Since: 1.10
         */
-        retrieve?: boolean
+        retrieve?: boolean;
 
         /**
         * Display component renderer types. Since: 1.10
@@ -1543,7 +1543,7 @@ declare namespace DataTables {
     }
 
     interface ColumnDefsSettings extends ColumnSettings {
-        targets: string | number | (number | string)[]
+        targets: string | number | (number | string)[];
     }
 
     interface FunctionColumnCreatedCell {

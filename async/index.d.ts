@@ -34,7 +34,7 @@ interface AsyncQueue<T> {
     empty: () => any;
     drain: () => any;
     paused: boolean;
-    pause(): void
+    pause(): void;
     resume(): void;
     kill(): void;
     workersList(): {
@@ -74,8 +74,8 @@ interface AsyncPriorityQueue<T> {
 interface AsyncCargo {
     length(): number;
     payload: number;
-    push(task: any, callback? : Function): void;
-    push(task: any[], callback? : Function): void;
+    push(task: any, callback?: Function): void;
+    push(task: any[], callback?: Function): void;
     saturated(): void;
     empty(): void;
     drain(): void;
@@ -147,9 +147,9 @@ interface Async {
     doWhilst(fn: AsyncVoidFunction, test: () => boolean, callback: (err: any) => void): void;
     until(test: () => boolean, fn: AsyncVoidFunction, callback: (err: any) => void): void;
     doUntil(fn: AsyncVoidFunction, test: () => boolean, callback: (err: any) => void): void;
-    during(test: (testCallback : (error: Error, truth: boolean) => void) => void, fn: AsyncVoidFunction, callback: (err: any) => void): void;
+    during(test: (testCallback: (error: Error, truth: boolean) => void) => void, fn: AsyncVoidFunction, callback: (err: any) => void): void;
     doDuring(fn: AsyncVoidFunction, test: (testCallback: (error: Error, truth: boolean) => void) => void, callback: (err: any) => void): void;
-    forever(next: (errCallback : (err: Error) => void) => void, errBack: (err: Error) => void) : void;
+    forever(next: (errCallback: (err: Error) => void) => void, errBack: (err: Error) => void): void;
     waterfall(tasks: Function[], callback?: (err: Error, results?: any) => void): void;
     compose(...fns: Function[]): Function;
     seq(...fns: Function[]): Function;
@@ -157,21 +157,21 @@ interface Async {
     applyEachSeries(fns: Function[], argsAndCallback: any[]): void;     // applyEachSeries(fns, args..., callback). TS does not support ... for a middle argument. Callback is optional.
     queue<T>(worker: AsyncWorker<T>, concurrency?: number): AsyncQueue<T>;
     priorityQueue<T>(worker: AsyncWorker<T>, concurrency: number): AsyncPriorityQueue<T>;
-    cargo(worker : (tasks: any[], callback : ErrorCallback) => void, payload? : number) : AsyncCargo;
+    cargo(worker: (tasks: any[], callback: ErrorCallback) => void, payload?: number): AsyncCargo;
     auto(tasks: any, concurrency?: number, callback?: (error: Error, results: any) => void): void;
     autoInject(tasks: any, callback?: (error: Error, results: any) => void): void;
-    retry<T>(opts: number, task: (callback : AsyncResultCallback<T>, results: any) => void, callback: (error: Error, results: any) => void): void;
-    retry<T>(opts: { times: number, interval: number|((retryCount: number) => number) }, task: (callback: AsyncResultCallback<T>, results : any) => void, callback: (error: Error, results: any) => void): void;
+    retry<T>(opts: number, task: (callback: AsyncResultCallback<T>, results: any) => void, callback: (error: Error, results: any) => void): void;
+    retry<T>(opts: { times: number, interval: number|((retryCount: number) => number) }, task: (callback: AsyncResultCallback<T>, results: any) => void, callback: (error: Error, results: any) => void): void;
     retryable<T>(opts: number | {times: number, interval: number}, task: AsyncFunction<T>): AsyncFunction<T>;
     apply(fn: Function, ...arguments: any[]): AsyncFunction<any>;
     nextTick(callback: Function, ...args: any[]): void;
     setImmediate: typeof async.nextTick;
 
-    allLimit<T>(arr: T[], limit: number, iteratee: AsyncBooleanIterator<T>, cb?: (result: boolean) => any) : any;
-    everySeries<T>(arr: T[], iteratee: AsyncBooleanIterator<T>, cb?: (result: boolean) => any) : any
+    allLimit<T>(arr: T[], limit: number, iteratee: AsyncBooleanIterator<T>, cb?: (result: boolean) => any): any;
+    everySeries<T>(arr: T[], iteratee: AsyncBooleanIterator<T>, cb?: (result: boolean) => any): any;
     allSeries: typeof async.everySeries;
 
-    reflect<T>(fn: AsyncFunction<T>) : (callback: (err: void, result: {error?: Error, value?: T}) => void) => void;
+    reflect<T>(fn: AsyncFunction<T>): (callback: (err: void, result: {error?: Error, value?: T}) => void) => void;
     reflectAll<T>(tasks: AsyncFunction<T>[]): ((callback: (err: void, result: {error?: Error, value?: T}) => void) => void)[];
 
     timeout<T>(fn: AsyncFunction<T>, milliseconds: number, info: any): AsyncFunction<T>;
@@ -182,10 +182,10 @@ interface Async {
 
     transform<T, R>(arr: T[], iteratee: (acc: R[], item: T, key: string, callback: (error?: Error) => void) => void): void;
     transform<T, R>(arr: T[], acc: R[], iteratee: (acc: R[], item: T, key: string, callback: (error?: Error) => void) => void): void;
-    transform<T, R>(arr: {[key: string] : T}, iteratee: (acc: {[key: string] : R}, item: T, key: string, callback: (error?: Error) => void) => void): void;
-    transform<T, R>(arr: {[key: string] : T}, acc: {[key: string] : R}, iteratee: (acc: {[key: string] : R}, item: T, key: string, callback: (error?: Error) => void) => void): void;
+    transform<T, R>(arr: {[key: string]: T}, iteratee: (acc: {[key: string]: R}, item: T, key: string, callback: (error?: Error) => void) => void): void;
+    transform<T, R>(arr: {[key: string]: T}, acc: {[key: string]: R}, iteratee: (acc: {[key: string]: R}, item: T, key: string, callback: (error?: Error) => void) => void): void;
 
-    race<T>(tasks: (AsyncFunction<T>)[], callback: AsyncResultCallback<T>) : void;
+    race<T>(tasks: (AsyncFunction<T>)[], callback: AsyncResultCallback<T>): void;
 
     // Utils
     memoize(fn: Function, hasher?: Function): Function;

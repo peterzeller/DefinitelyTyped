@@ -26,7 +26,7 @@ declare module "redux-storage" {
          * Save
          * @param state
          */
-        save(state: any): PromiseLike<any>
+        save(state: any): PromiseLike<any>;
     }
 
     export interface StateMerger {

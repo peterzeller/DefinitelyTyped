@@ -57,7 +57,7 @@ interface XtermConstructor {
 /**
  * A terminal options.
  */
-declare module Xterm {
+declare namespace Xterm {
   interface IOptions {
     colors?: string[];
 

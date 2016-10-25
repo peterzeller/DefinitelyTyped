@@ -78,7 +78,7 @@ export interface ExceptionAllInfo {
     process: ExceptionProcessInfo;
     os: ExceptionOsInfo;
     trace: Array<ExceptionTrace>;
-    stack: Array<string>;
+    stack: string[];
 }
 
 export interface Exception {
@@ -156,7 +156,7 @@ export interface TransportStatic {
 export interface TransportInstance extends TransportStatic, NodeJS.EventEmitter {
     formatQuery(query: (string | Object)): (string | Object);
     normalizeQuery(options: QueryOptions): QueryOptions;
-    formatResults(results: (Object | Array<any>), options?: Object): (Object | Array<any>);
+    formatResults(results: (Object | any[]), options?: Object): (Object | any[]);
     logException(msg: string, meta: Object, callback: () => void): void;
 }
 

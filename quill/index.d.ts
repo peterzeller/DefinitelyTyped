@@ -22,7 +22,7 @@ declare namespace QuillJS {
     }
 
     export interface DeltaStatic {
-        ops?: Array<any>;
+        ops?: any[];
         retain?: any;
         delete?: any;
         insert?: any;

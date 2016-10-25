@@ -86,7 +86,7 @@ declare module 'angular' {
        */
       defineRole(
         role: string,
-        permissions: Array<string>,
+        permissions: string[],
         validationFunction: RoleValidationFunction
       ): void;
 
@@ -97,7 +97,7 @@ declare module 'angular' {
        * @param roleName {String} Name of defined role
        * @param permissions {Array} Set of permission names
        */
-      defineRole(role: string, permissions: Array<string>): void;
+      defineRole(role: string, permissions: string[]): void;
 
       /**
        * Checks if role is defined in store
@@ -164,8 +164,8 @@ declare module 'angular' {
 
     export interface DataWithPermissions {
       permissions?: {
-        only?: (() => void) | Array<string> | angular.IPromise<any>;
-        except?: (() => void) | Array<string> | angular.IPromise<any>;
+        only?: (() => void) | string[] | angular.IPromise<any>;
+        except?: (() => void) | string[] | angular.IPromise<any>;
         redirectTo: string | (() => string) | (() => PermissionRedirectConfigation) | { [index: string]: PermissionRedirectConfigation }
       };
     }

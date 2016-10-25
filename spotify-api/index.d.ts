@@ -200,7 +200,7 @@ declare namespace SpotifyApi {
      * Check if User Follows Users or Artists
      * GET /v1/me/following/contains
      */
-    interface UserFollowsUsersOrArtistsResponse extends Array<boolean> {}
+    interface UserFollowsUsersOrArtistsResponse extends boolean[] {}
 
     /**
      * Follow a Playlist
@@ -236,7 +236,7 @@ declare namespace SpotifyApi {
      * Check User’s Saved Tracks
      * GET /v1/me/tracks/contains
      */
-    interface CheckUsersSavedTracksResponse extends Array<boolean> {}
+    interface CheckUsersSavedTracksResponse extends boolean[] {}
 
     /**
      * Save albums for user
@@ -260,7 +260,7 @@ declare namespace SpotifyApi {
      * Check user's saved albums
      * DELETE /v1/me/albums/contains?ids={ids}
      */
-    interface CheckUserSavedAlbumsResponse extends Array<boolean> {}
+    interface CheckUserSavedAlbumsResponse extends boolean[] {}
 
     /**
      * Get a User’s Top Artists and Tracks
@@ -396,7 +396,7 @@ declare namespace SpotifyApi {
      * Check if Users Follow a Playlist
      * GET /v1/users/{user_id}/playlists/{playlist_id}/followers/contains
      */
-    interface UsersFollowPlaylistReponse extends Array<boolean> {}
+    interface UsersFollowPlaylistReponse extends boolean[] {}
 
 
 

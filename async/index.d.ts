@@ -139,9 +139,9 @@ interface Async {
     // Control Flow
     series<T>(tasks: AsyncFunction<T>[], callback?: AsyncResultArrayCallback<T>): void;
     series<T>(tasks: Dictionary<AsyncFunction<T>>, callback?: AsyncResultObjectCallback<T>): void;
-    parallel<T>(tasks: Array<AsyncFunction<T>>, callback?: AsyncResultArrayCallback<T>): void;
+    parallel<T>(tasks: AsyncFunction<T>[], callback?: AsyncResultArrayCallback<T>): void;
     parallel<T>(tasks: Dictionary<AsyncFunction<T>>, callback?: AsyncResultObjectCallback<T>): void;
-    parallelLimit<T>(tasks: Array<AsyncFunction<T>>, limit: number, callback?: AsyncResultArrayCallback<T>): void;
+    parallelLimit<T>(tasks: AsyncFunction<T>[], limit: number, callback?: AsyncResultArrayCallback<T>): void;
     parallelLimit<T>(tasks: Dictionary<AsyncFunction<T>>, limit: number, callback?: AsyncResultObjectCallback<T>): void;
     whilst(test: () => boolean, fn: AsyncVoidFunction, callback: (err: any) => void): void;
     doWhilst(fn: AsyncVoidFunction, test: () => boolean, callback: (err: any) => void): void;

@@ -4,7 +4,7 @@
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
 declare module "async-polling" {
-    module AsyncPolling {
+    namespace AsyncPolling {
         export type EventName = "run"|"start"|"error"|"result"|"end"|"schedule"|"stop";
     }
 
@@ -12,7 +12,7 @@ declare module "async-polling" {
         run: () => any;
         stop: () => any;
         on: (eventName: AsyncPolling.EventName, listener: Function) => any;
-    }
+    };
 
-    export = AsyncPolling; 
+    export = AsyncPolling;
 }

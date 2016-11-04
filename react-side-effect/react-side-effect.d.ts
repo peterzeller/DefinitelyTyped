@@ -18,7 +18,7 @@ declare module "react-side-effect" {
     class ElementClass extends React.Component<any, any> {}
 
     interface ClassDecorator {
-        <T extends (typeof ElementClass)>(component:T): T;
+        <T extends (typeof ElementClass)>(component: T): T;
     }
 
     namespace withSideEffect {} // https://github.com/Microsoft/TypeScript/issues/5073

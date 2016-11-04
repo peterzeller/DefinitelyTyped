@@ -16,10 +16,10 @@ interface BasicStrategyOptions {
 
 interface DigestStrategyOptions {
     realm?: string;
-    domain?: string | Array<string>;
+    domain?: string | string[];
     opaque?: string;
     algorithm?: string;
-    qop?: string | Array<string>;
+    qop?: string | string[];
 }
 
 interface DigestValidateOptions {

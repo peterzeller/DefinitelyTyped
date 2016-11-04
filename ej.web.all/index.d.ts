@@ -11646,7 +11646,7 @@ export interface TabsGroupsContentGroup {
 	/** Specifies the Syncfusion button and menu as gallery extra items.
 	*   @Default {array}
 	*/
-	customGalleryItems?: Array<TabsGroupsContentGroupsCustomGalleryItem>;
+	customGalleryItems?: TabsGroupsContentGroupsCustomGalleryItem[];
 
 	/** Provides custom tooltip for button, split button, dropdown list, toggle button, custom controls in the sub groups. Text and HTML support are also provided for title and content.
 	*   @Default {Object}
@@ -11671,7 +11671,7 @@ export interface TabsGroupsContentGroup {
 	/** Defines each gallery content.
 	*   @Default {array}
 	*/
-	galleryItems?: Array<TabsGroupsContentGroupsGalleryItem>;
+	galleryItems?: TabsGroupsContentGroupsGalleryItem[];
 
 	/** Specifies the Id for button, split button, dropdown list, toggle button, gallery, custom controls in the sub groups.
 	*   @Default {null}
@@ -11734,7 +11734,7 @@ export interface TabsGroupsContent {
 	/** Specifies the controls such as Syncfusion button, split button, dropdown list, toggle button, gallery, custom controls in the subgroup of the ribbon tab .
 	*   @Default {array}
 	*/
-	groups?: Array<TabsGroupsContentGroup>;
+	groups?: TabsGroupsContentGroup[];
 }
 
 export interface TabsGroupsGroupExpanderSettings {
@@ -11760,7 +11760,7 @@ export interface TabsGroup {
 	/** Specifies the Syncfusion button, split button, dropdown list, toggle button, gallery, custom controls to the groups in the ribbon control.
 	*   @Default {array}
 	*/
-	content?: Array<TabsGroupsContent>;
+	content?: TabsGroupsContent[];
 
 	/** Specifies the ID of custom items to be placed in the groups.
 	*   @Default {null}
@@ -11798,7 +11798,7 @@ export interface Tab {
 	/** Specifies single group or multiple groups and its contents to each tab in the ribbon control.
 	*   @Default {array}
 	*/
-	groups?: Array<TabsGroup>;
+	groups?: TabsGroup[];
 
 	/** Specifies the ID for each tab's content panel.
 	*   @Default {null}
@@ -12156,7 +12156,7 @@ export interface Model {
 	/** Gets or sets a value that indicates whether to add customToolbarItems within the toolbar to perform any action in the Kanban.
 	*   @Default {[]}
 	*/
-	customToolbarItems?: Array<CustomToolbarItem>;
+	customToolbarItems?: CustomToolbarItem[];
 
 	/** Gets or sets a value that indicates to render the Kanban with custom theme.
 	*/
@@ -12210,7 +12210,7 @@ export interface Model {
 	/** To customize the filtering behavior based on queries given.
 	*   @Default {array}
 	*/
-	filterSettings?: Array<FilterSetting>;
+	filterSettings?: FilterSetting[];
 
 	/** ej Query to query database of Kanban.
 	*   @Default {null}
@@ -12240,7 +12240,7 @@ export interface Model {
 	/** Gets or sets an object that indicates to managing the collection of stacked header rows for the Kanban.
 	*   @Default {Array}
 	*/
-	stackedHeaderRows?: Array<StackedHeaderRow>;
+	stackedHeaderRows?: StackedHeaderRow[];
 
 	/** The tooltip allows to display card details in a tooltip while hovering on it.
 	*/
@@ -12927,7 +12927,7 @@ export interface EditSettings {
 	/** Get or sets an object that indicates whether to customize the editing fields of Kanban card.
 	*   @Default {Array}
 	*/
-	editItems?: Array<EditSettingsEditItem>;
+	editItems?: EditSettingsEditItem[];
 
 	/** This specifies the id of the template which is require to be edited using the External edit form.
 	*   @Default {null}
@@ -13059,7 +13059,7 @@ export interface StackedHeaderRow {
 	/** Gets or sets a value that indicates whether to add stacked header columns into the stacked header rows.
 	*   @Default {Array}
 	*/
-	stackedHeaderColumns?: Array<StackedHeaderRowsStackedHeaderColumn>;
+	stackedHeaderColumns?: StackedHeaderRowsStackedHeaderColumn[];
 }
 
 export interface TooltipSettings {
@@ -14346,11 +14346,11 @@ export interface Tools {
 
 	/** Specifies the customOrderedList tools and the display order of this tool in the RTE toolbar.
 	*/
-	customOrderedList?: Array<ToolsCustomOrderedList>;
+	customOrderedList?: ToolsCustomOrderedList[];
 
 	/** Specifies the customUnOrderedList tools and the display order of this tool in the RTE toolbar.
 	*/
-	customUnorderedList?: Array<ToolsCustomUnorderedList>;
+	customUnorderedList?: ToolsCustomUnorderedList[];
 }
 }
 
@@ -20123,12 +20123,12 @@ export interface Model {
 	/** Gets or sets an object that indicates to managing the collection of stacked header rows for the grid.
 	*   @Default {[]}
 	*/
-	stackedHeaderRows?: Array<StackedHeaderRow>;
+	stackedHeaderRows?: StackedHeaderRow[];
 
 	/** Gets or sets an object that indicates to managing the collection of summary rows for the grid.
 	*   @Default {[]}
 	*/
-	summaryRows?: Array<SummaryRow>;
+	summaryRows?: SummaryRow[];
 
 	/** Gets or sets an object that indicates whether to auto wrap the grid header or content or both
 	*/
@@ -21981,7 +21981,7 @@ export interface Column {
 	/** Gets or sets an object that indicates to define a command column in the grid.
 	*   @Default {[]}
 	*/
-	commands?: Array<ColumnsCommand>;
+	commands?: ColumnsCommand[];
 
 	/** Gets or sets a value that indicates to provide custom CSS for an individual column.
 	*/
@@ -22145,7 +22145,7 @@ export interface ContextMenuSettings {
 
 	/** Used to get or set the subMenu to the corresponding custom context menu item.
 	*/
-	subContextMenu?: Array<ContextMenuSettingsSubContextMenu>;
+	subContextMenu?: ContextMenuSettingsSubContextMenu[];
 
 	/** Gets or sets a value that indicates whether to disable the default context menu items in the grid.
 	*   @Default {false}
@@ -22260,7 +22260,7 @@ export interface FilterSettings {
 	/** Gets or sets a value that indicates whether to define the filtered columns details programmatically at initial load
 	*   @Default {[]}
 	*/
-	filteredColumns?: Array<FilterSettingsFilteredColumn>;
+	filteredColumns?: FilterSettingsFilteredColumn[];
 
 	/** This specifies the grid to show the filterBar or filterMenu to the grid records. See filterType
 	*   @Default {ej.Grid.FilterType.FilterBar}
@@ -22498,7 +22498,7 @@ export interface SortSettings {
 
 	/** Gets or sets a value that indicates whether to define the direction and field to sort the column.
 	*/
-	sortedColumns?: Array<SortSettingsSortedColumn>;
+	sortedColumns?: SortSettingsSortedColumn[];
 }
 
 export interface StackedHeaderRowsStackedHeaderColumn {
@@ -22529,7 +22529,7 @@ export interface StackedHeaderRow {
 	/** Gets or sets a value that indicates whether to add stacked header columns into the stacked header rows
 	*   @Default {[]}
 	*/
-	stackedHeaderColumns?: Array<StackedHeaderRowsStackedHeaderColumn>;
+	stackedHeaderColumns?: StackedHeaderRowsStackedHeaderColumn[];
 }
 
 export interface SummaryRowsSummaryColumn {
@@ -22595,7 +22595,7 @@ export interface SummaryRow {
 	/** Gets or sets a value that indicates whether to add summary columns into the summary rows.
 	*   @Default {[]}
 	*/
-	summaryColumns?: Array<SummaryRowsSummaryColumn>;
+	summaryColumns?: SummaryRowsSummaryColumn[];
 
 	/** This specifies the grid to show the title for the summary rows.
 	*/
@@ -24166,7 +24166,7 @@ export interface DataSourceColumn {
 	/** Allows the user to filter the report by default using advanced filtering (excel-like) option for OLAP data source in client-mode.
 	*   @Default {[]}
 	*/
-	advancedFilter?: Array<DataSourceColumnsAdvancedFilter>;
+	advancedFilter?: DataSourceColumnsAdvancedFilter[];
 
 	/** Allows the user to enable the usage of named set items in respective axis. This is only applicable for OLAP datasource.
 	*   @Default {false}
@@ -24210,7 +24210,7 @@ export interface DataSourceRow {
 	/** Allows the user to filter the report by default using advanced filtering (excel-like) option for OLAP data source in client-mode.
 	*   @Default {[]}
 	*/
-	advancedFilter?: Array<DataSourceRowsAdvancedFilter>;
+	advancedFilter?: DataSourceRowsAdvancedFilter[];
 
 	/** Allows the user to enable the usage of named set items in respective axis. This is only applicable for OLAP datasource.
 	*   @Default {false}
@@ -24274,7 +24274,7 @@ export interface DataSource {
 	/** Lists out the items to be arranged in column section of PivotGrid.
 	*   @Default {[]}
 	*/
-	columns?: Array<DataSourceColumn>;
+	columns?: DataSourceColumn[];
 
 	/** Contains the respective Cube name from database as string type.
 	*   @Default {â€œâ€}
@@ -25127,7 +25127,7 @@ export interface DataSource {
 	/** Lists out the items to be arranged in column section of PivotChart.
 	*   @Default {[]}
 	*/
-	columns?: Array<DataSourceColumn>;
+	columns?: DataSourceColumn[];
 
 	/** Contains the respective Cube name from database as string type.
 	*   @Default {â€œâ€}
@@ -26013,7 +26013,7 @@ export interface DataSource {
 	/** Lists out the items to be arranged in column section of PivotGauge.
 	*   @Default {[]}
 	*/
-	columns?: Array<DataSourceColumn>;
+	columns?: DataSourceColumn[];
 
 	/** Contains the respective Cube name from database as string type.
 	*   @Default {â€œâ€}
@@ -26417,7 +26417,7 @@ export interface DataSource {
 	/** Lists out the items to be arranged in column section of PivotTreeMap.
 	*   @Default {[]}
 	*/
-	columns?: Array<DataSourceColumn>;
+	columns?: DataSourceColumn[];
 
 	/** Contains the respective Cube name from database as string type.
 	*   @Default {â€œâ€}
@@ -26700,7 +26700,7 @@ export interface Model {
 	/** Holds all the options related to the resources settings of the Schedule. It is a collection of one or more resource objects, where the levels of resources are rendered on the Schedule based on the order of the resource data provided within this collection.
 	*   @Default {null}
 	*/
-	resources?: Array<Resource>;
+	resources?: Resource[];
 
 	/** When set to true, displays the all-day row cells on the Schedule.
 	*   @Default {true}
@@ -28757,7 +28757,7 @@ export interface Model {
 
 	/** Specifies the selected cell information on rendering Gantt.
 	*/
-	selectedCellIndexes?: Array<SelectedCellIndex>;
+	selectedCellIndexes?: SelectedCellIndex[];
 
 	/** Specifies the sorting options for Gantt.
 	*/
@@ -29924,7 +29924,7 @@ export interface Model {
 	/** Gets or sets the list of data sources for the RDLC report.
 	*   @Default {[]}
 	*/
-	dataSources?: Array<DataSource>;
+	dataSources?: DataSource[];
 
 	/** Enables or disables the page cache of report.
 	*   @Default {false}
@@ -29952,7 +29952,7 @@ export interface Model {
 	/** Gets or sets the list of parameters associated with the report.
 	*   @Default {[]}
 	*/
-	parameters?: Array<Parameter>;
+	parameters?: Parameter[];
 
 	/** Enables and disables the print mode.
 	*   @Default {false}
@@ -32464,7 +32464,7 @@ export interface Model {
 
 	/** Specify the items of radial menu
 	*/
-	items?: Array<Item>;
+	items?: Item[];
 
 	/** Specifies the radius of radial menu
 	*/
@@ -34533,7 +34533,7 @@ export interface Model {
 
 	/** Gets or sets an object that indicates to customize the sheet behavior in Spreadsheet.
 	*/
-	sheets?: Array<Sheet>;
+	sheets?: Sheet[];
 
 	/** Gets or sets a value that indicates whether to show or hide pager in the Spreadsheet.
 	*   @Default {true}
@@ -35985,7 +35985,7 @@ export interface Sheet {
 	/** Specifies the border for the cell in the Spreadsheet.
 	*   @Default {[]}
 	*/
-	border?: Array<SheetsBorder>;
+	border?: SheetsBorder[];
 
 	/** Specifies the conditional formatting for the range of cell in Spreadsheet.
 	*   @Default {[]}
@@ -36044,7 +36044,7 @@ export interface Sheet {
 	/** Specifies single range or multiple range settings for a sheet in Spreadsheet.
 	*   @Default {[]}
 	*/
-	rangeSettings?: Array<SheetsRangeSetting>;
+	rangeSettings?: SheetsRangeSetting[];
 
 	/** Gets or sets a value that indicates to define row count in the Spreadsheet.
 	*   @Default {20}
@@ -36054,7 +36054,7 @@ export interface Sheet {
 	/** Specifies the rows for a sheet in Spreadsheet.
 	*   @Default {[]}
 	*/
-	rows?: Array<SheetsRow>;
+	rows?: SheetsRow[];
 
 	/** Gets or sets a value that indicates whether to show or hide grid lines in the Spreadsheet.
 	*   @Default {true}
@@ -36587,7 +36587,7 @@ export interface Model {
 	/** An array of JSON objects, where each object represents a node/connector
 	*   @Default {[]}
 	*/
-	palettes?: Array<Palette>;
+	palettes?: Palette[];
 
 	/** Defines the preview height of the symbols
 	*   @Default {100}
@@ -38102,7 +38102,7 @@ export interface ScalesIndicator {
 	/** Specifies the state ranges in bar indicators
 	*   @Default {Array}
 	*/
-	stateRanges?: Array<ScalesIndicatorsStateRange>;
+	stateRanges?: ScalesIndicatorsStateRange[];
 
 	/** Specifies the textLocation in bar indicators
 	*   @Default {null}
@@ -41159,7 +41159,7 @@ export interface Model {
 
 	/** Options for adding and customizing annotations in Chart.
 	*/
-	annotations?: Array<Annotation>;
+	annotations?: Annotation[];
 
 	/** URL of the image to be used as chart background.
 	*   @Default {null}
@@ -41180,7 +41180,7 @@ export interface Model {
 
 	/** Options to split Chart into multiple plotting areas vertically. Each object in the collection represents a plotting area in Chart.
 	*/
-	columnDefinitions?: Array<ColumnDefinition>;
+	columnDefinitions?: ColumnDefinition[];
 
 	/** Options for configuring the properties of all the series. You can also override the options for specific series by using series collection.
 	*/
@@ -41212,7 +41212,7 @@ export interface Model {
 
 	/** Options to customize the technical indicators.
 	*/
-	indicators?: Array<Indicator>;
+	indicators?: Indicator[];
 
 	/** Controls whether Chart has to be responsive while resizing.
 	*   @Default {false}
@@ -41257,11 +41257,11 @@ export interface Model {
 
 	/** Options to split Chart into multiple plotting areas horizontally. Each object in the collection represents a plotting area in Chart.
 	*/
-	rowDefinitions?: Array<RowDefinition>;
+	rowDefinitions?: RowDefinition[];
 
 	/** Specifies the properties used for customizing the series.
 	*/
-	series?: Array<Series>;
+	series?: Series[];
 
 	/** Controls whether data points has to be displayed side by side or along the depth of the axis.
 	*   @Default {false}
@@ -43504,7 +43504,7 @@ export interface CommonSeriesOptions {
 
 	/** Option to add the trendlines to chart.
 	*/
-	trendlines?: Array<CommonSeriesOptionsTrendline>;
+	trendlines?: CommonSeriesOptionsTrendline[];
 
 	/** Options for customizing the appearance of the series or data point while highlighting.
 	*/
@@ -44545,7 +44545,7 @@ export interface PrimaryXAxis {
 	/** Options for customizing the strip lines.
 	*   @Default {[ ]}
 	*/
-	stripLine?: Array<PrimaryXAxisStripLine>;
+	stripLine?: PrimaryXAxisStripLine[];
 
 	/** Specifies the position of the axis tick lines.
 	*   @Default {outside. See TickLinesPosition}
@@ -45063,7 +45063,7 @@ export interface PrimaryYAxis {
 	/** Options for customizing the strip lines.
 	*   @Default {[ ]}
 	*/
-	stripLine?: Array<PrimaryYAxisStripLine>;
+	stripLine?: PrimaryYAxisStripLine[];
 
 	/** Specifies the position of the axis tick lines.
 	*   @Default {outside. See TickLinesPosition}
@@ -46246,7 +46246,7 @@ export interface Series {
 
 	/** Option to add data points; each point should have x and y property. Also, optionally, you can customize the points color, border, marker by using fill, border and marker options.
 	*/
-	points?: Array<SeriesPoint>;
+	points?: SeriesPoint[];
 
 	/** Specifies the mode of the pyramid series.
 	*   @Default {linear}
@@ -46339,7 +46339,7 @@ export interface Series {
 
 	/** Option to add trendlines to chart.
 	*/
-	trendlines?: Array<SeriesTrendline>;
+	trendlines?: SeriesTrendline[];
 
 	/** Options for customizing the appearance of the series or data point while highlighting.
 	*/
@@ -47184,7 +47184,7 @@ export interface Model {
 
 	/** Specifies the properties used for customizing the range series.
 	*/
-	series?: Array<Series>;
+	series?: Series[];
 
 	/** Toggles the redrawing of chart on moving the sliders.
 	*   @Default {true}
@@ -48344,7 +48344,7 @@ export interface Model {
 
 	/** Contains property to customize the qualitative ranges.
 	*/
-	qualitativeRanges?: Array<QualitativeRange>;
+	qualitativeRanges?: QualitativeRange[];
 
 	/** Size of the qualitative range depends up on the specified value.
 	*   @Default {32}
@@ -49101,7 +49101,7 @@ export interface QuantitativeScaleSettings {
 
 	/** Contains property to customize the featured measure.
 	*/
-	featureMeasures?: Array<QuantitativeScaleSettingsFeatureMeasure>;
+	featureMeasures?: QuantitativeScaleSettingsFeatureMeasure[];
 
 	/** Contains property to customize the fields.
 	*/
@@ -49553,7 +49553,7 @@ export interface Model {
 
 	/** Layer for holding the map shapes
 	*/
-	layers?: Array<Layer>;
+	layers?: Layer[];
 
 	/** Triggered on selecting the map markers. */
 	markerSelected? (e: MarkerSelectedEventArgs): void;
@@ -49915,12 +49915,12 @@ export interface LayersShapeSettingsColorMappings {
 	/** Specifies the range colorMappings in the shape layer of map.
 	*   @Default {null}
 	*/
-	rangeColorMapping?: Array<LayersShapeSettingsColorMappingsRangeColorMapping>;
+	rangeColorMapping?: LayersShapeSettingsColorMappingsRangeColorMapping[];
 
 	/** Specifies the equalColorMapping in the shape layer of map.
 	*   @Default {null}
 	*/
-	equalColorMapping?: Array<LayersShapeSettingsColorMappingsEqualColorMapping>;
+	equalColorMapping?: LayersShapeSettingsColorMappingsEqualColorMapping[];
 }
 
 export interface LayersShapeSettings {
@@ -50334,7 +50334,7 @@ export interface Model {
 	/** Specifies the group color mapping of the treemap
 	*   @Default {[]}
 	*/
-	groupColorMapping?: Array<GroupColorMapping>;
+	groupColorMapping?: GroupColorMapping[];
 
 	/** Specifies the legend settings of the treemap
 	*/

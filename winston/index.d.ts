@@ -77,7 +77,7 @@ export interface ExceptionAllInfo {
     date: Date;
     process: ExceptionProcessInfo;
     os: ExceptionOsInfo;
-    trace: Array<ExceptionTrace>;
+    trace: ExceptionTrace[];
     stack: string[];
 }
 
@@ -85,7 +85,7 @@ export interface Exception {
     getAllInfo(err: Error): ExceptionAllInfo;
     getProcessInfo(): ExceptionProcessInfo;
     getOsInfo(): ExceptionOsInfo;
-    getTrace(err: Error): Array<ExceptionTrace>;
+    getTrace(err: Error): ExceptionTrace[];
 }
 
 export interface MetadataRewriter {
@@ -101,9 +101,9 @@ export interface LoggerStatic {
 }
 
 export interface LoggerInstance extends NodeJS.EventEmitter {
-    rewriters: Array<MetadataRewriter>;
-    filters: Array<MetadataFilter>;
-    transports: Array<TransportInstance>;
+    rewriters: MetadataRewriter[];
+    filters: MetadataFilter[];
+    transports: TransportInstance[];
 
     extend(target: any): LoggerInstance;
 

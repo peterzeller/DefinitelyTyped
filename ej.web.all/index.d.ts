@@ -2206,7 +2206,7 @@ export interface MultiColumnSettings {
 
 	/** Field and Header Text collections can be defined and customized through columns field.
 	*/
-	columns?: Array<MultiColumnSettingsColumn>;
+	columns?: MultiColumnSettingsColumn[];
 }
 
 enum Animation{
@@ -10965,7 +10965,7 @@ export interface Model {
 	/** Specifies the contextual tabs and tab set to the ribbon control with the background color and border color. Refer to the tabs section for adding tabs into the contextual tab and contextual tab set.
 	*   @Default {array}
 	*/
-	contextualTabs?: Array<ContextualTab>;
+	contextualTabs?: ContextualTab[];
 
 	/** Specifies the index or indexes to disable the given index tab or indexes tabs in the ribbon control.
 	*   @Default {0}
@@ -10985,7 +10985,7 @@ export interface Model {
 	/** Specifies the tabs and its groups. Also specifies the control details that has to be placed in the tab area in the ribbon control.
 	*   @Default {array}
 	*/
-	tabs?: Array<Tab>;
+	tabs?: Tab[];
 
 	/** Gets or sets a value that indicates whether to customizing the user interface (UI) as locale-specific in order to display regional data i.e. in a language and culture specific to a particular country or region and  it will need to use the user's preference.
 	*   @Default {en-US}
@@ -11470,7 +11470,7 @@ export interface ApplicationTabBackstageSettings {
 	/** Specifies the ribbon backstage page with its tab and button elements.
 	*   @Default {array}
 	*/
-	pages?: Array<ApplicationTabBackstageSettingsPage>;
+	pages?: ApplicationTabBackstageSettingsPage[];
 
 	/** Specifies the width of backstage page header that contains tabs and buttons.
 	*   @Default {null}
@@ -12146,7 +12146,7 @@ export interface Model {
 	/** Gets or sets an object that indicates to render the Kanban with specified columns.
 	*   @Default {array}
 	*/
-	columns?: Array<Column>;
+	columns?: Column[];
 
 	/** Gets or sets an object that indicates whether to Customize the card settings.
 	*   @Default {Object}
@@ -12774,7 +12774,7 @@ export interface ContextMenuSettings {
 	/** Gets or sets a value that indicates whether to add custom contextMenu items.
 	*   @Default {array}
 	*/
-	customMenuItems?: Array<ContextMenuSettingsCustomMenuItem>;
+	customMenuItems?: ContextMenuSettingsCustomMenuItem[];
 }
 
 export interface ColumnsConstraints {
@@ -19960,7 +19960,7 @@ export interface Model {
 	/** Gets or sets an object that indicates to render the grid with specified columns
 	*   @Default {[]}
 	*/
-	columns?: Array<Column>;
+	columns?: Column[];
 
 	/** Gets or sets an object that indicates whether to customize the context menu behavior of the grid.
 	*/
@@ -24289,12 +24289,12 @@ export interface DataSource {
 	/** Lists out the items to be arranged in row section of PivotGrid.
 	*   @Default {[]}
 	*/
-	rows?: Array<DataSourceRow>;
+	rows?: DataSourceRow[];
 
 	/** Lists out the items which supports calculation in PivotGrid.
 	*   @Default {[]}
 	*/
-	values?: Array<DataSourceValue>;
+	values?: DataSourceValue[];
 
 	/** Allows user to filter the members (by its name and values) by enable the advanced filtering (excel-like) option for OLAP data source in client-mode.
 	*   @Default {false}
@@ -24304,7 +24304,7 @@ export interface DataSource {
 	/** Lists out the items which supports filtering of values in PivotGrid.
 	*   @Default {[]}
 	*/
-	filters?: Array<DataSourceFilter>;
+	filters?: DataSourceFilter[];
 }
 
 export interface HyperlinkSettings {
@@ -25142,17 +25142,17 @@ export interface DataSource {
 	/** Lists out the items to be arranged in row section of PivotChart.
 	*   @Default {[]}
 	*/
-	rows?: Array<DataSourceRow>;
+	rows?: DataSourceRow[];
 
 	/** Lists out the items which supports calculation in PivotChart.
 	*   @Default {[]}
 	*/
-	values?: Array<DataSourceValue>;
+	values?: DataSourceValue[];
 
 	/** Lists out the items which supports filtering of values in PivotChart.
 	*   @Default {[]}
 	*/
-	filters?: Array<DataSourceFilter>;
+	filters?: DataSourceFilter[];
 }
 
 export interface ServiceMethodSettings {
@@ -26028,17 +26028,17 @@ export interface DataSource {
 	/** Lists out the items to be arranged in row section of PivotGauge.
 	*   @Default {[]}
 	*/
-	rows?: Array<DataSourceRow>;
+	rows?: DataSourceRow[];
 
 	/** Lists out the items which supports calculation in PivotGauge.
 	*   @Default {[]}
 	*/
-	values?: Array<DataSourceValue>;
+	values?: DataSourceValue[];
 
 	/** Lists out the items which supports filtering of values in PivotGauge.
 	*   @Default {[]}
 	*/
-	filters?: Array<DataSourceFilter>;
+	filters?: DataSourceFilter[];
 }
 
 export interface LabelFormatSettings {
@@ -26432,17 +26432,17 @@ export interface DataSource {
 	/** Lists out the items to be arranged in row section of PivotTreeMap.
 	*   @Default {[]}
 	*/
-	rows?: Array<DataSourceRow>;
+	rows?: DataSourceRow[];
 
 	/** Lists out the items which supports calculation in PivotTreeMap.
 	*   @Default {[]}
 	*/
-	values?: Array<DataSourceValue>;
+	values?: DataSourceValue[];
 
 	/** Lists out the items which supports filtering of values in PivotTreeMap.
 	*   @Default {[]}
 	*/
-	filters?: Array<DataSourceFilter>;
+	filters?: DataSourceFilter[];
 }
 
 export interface ServiceMethodSettings {
@@ -30637,7 +30637,7 @@ export interface Model {
 
 	/** Option for adding columns; each column has the option to bind to a field in the dataSource.
 	*/
-	columns?: Array<Column>;
+	columns?: Column[];
 
 	/** To Specify the column fields to be displayed in the dialog while inserting a column using column menu.
 	*   @Default {[]}

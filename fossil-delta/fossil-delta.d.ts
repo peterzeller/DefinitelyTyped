@@ -5,9 +5,9 @@
 
 /// <reference path="../node/node.d.ts" />
 declare module "fossil-delta" {
-  type ByteArray = Array<number> | Uint8Array | Buffer;
+  type ByteArray = number[] | Uint8Array | Buffer;
 
-  export function create(origin: ByteArray, target: ByteArray): Array<number>;
-  export function apply(origin: ByteArray, delta: Array<number>): Array<number>;
-  export function outputSize(delta: Array<number>): number;
+  export function create(origin: ByteArray, target: ByteArray): number[];
+  export function apply(origin: ByteArray, delta: number[]): number[];
+  export function outputSize(delta: number[]): number;
 }
